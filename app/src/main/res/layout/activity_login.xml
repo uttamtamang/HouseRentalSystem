@@ -90,6 +90,15 @@
                 android:text="LOGIN"
                 android:textColor="#fff"
                 android:textSize="15sp" />
+            <Button
+                android:id="@+id/test"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:background="#E50914"
+                android:text="LOGIN"
+                android:textColor="#fff"
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/linkRegistration"
