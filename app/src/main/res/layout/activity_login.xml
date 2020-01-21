@@ -5,48 +5,46 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    tools:context=".LoginActivity"
+    android:orientation="vertical">
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/background5"
+        android:src="@drawable/background"
         android:scaleType="centerCrop"
-
         />
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="#80000000"/>
+<!--    <ImageView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:src=""/>-->
+
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:layout_marginTop="45dp"
         >
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="25dp"
-            android:background="@drawable/background_white"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
+                android:layout_gravity="center"
                 android:layout_margin="15dp"
                 android:text="LOGIN"
-                android:textColor="#fff"
-                android:textSize="30dp"
+                android:textColor="#B8B8B8"
+                android:textSize="45sp"
                 android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/userEmail"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="50dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="15dp"
@@ -54,13 +52,16 @@
                 android:drawableLeft="@drawable/ic_mail_outline_black_24dp"
                 android:drawablePadding="5dp"
                 android:hint="user email"
+                android:textColorHint="#D4D4D4"
+                android:textColor="#B8B8B8"
                 android:paddingStart="10dp"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                android:singleLine="true"/>
 
             <EditText
                 android:id="@+id/userPassword"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="50dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="15dp"
@@ -68,9 +69,12 @@
                 android:drawableLeft="@drawable/ic_lock_outline_black_24dp"
                 android:drawablePadding="5dp"
                 android:hint="password"
+                android:textColorHint="#D4D4D4"
+                android:textColor="#B8B8B8"
                 android:inputType="textPassword"
                 android:paddingStart="10dp"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                android:singleLine="true"/>
 
             <CheckBox
                 android:layout_width="wrap_content"
@@ -79,12 +83,12 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="15dp"
                 android:text="Remember me."
-                android:textColor="#fff" />
+                android:textColor="#B8B8B8" />
 
             <Button
                 android:id="@+id/btnLogin"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_margin="15dp"
                 android:background="@drawable/button_background"
                 android:text="LOGIN"
@@ -105,13 +109,22 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginStart="15dp"
-                android:layout_marginEnd="15dp"
-                android:layout_marginBottom="15dp"
-                android:text="REGISTER NOW."
-                android:textColor="#fff"
+                android:layout_margin="15dp"
+                android:text="Don't have an account?"
+                android:textColor="#B8B8B8"
                 android:textStyle="italic" />
+
+            <Button
+                android:id="@+id/btnSignup"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="15dp"
+                android:background="@drawable/button_background"
+                android:text="Sign up"
+                android:textColor="#fff"
+                android:textSize="15sp" />
         </LinearLayout>
+
     </ScrollView>
 
 
