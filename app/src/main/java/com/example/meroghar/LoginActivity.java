@@ -22,7 +22,7 @@ import eightbitlab.com.blurview.BlurView;
 
 public class LoginActivity extends AppCompatActivity {
     EditText userName, password;
-    Button btnLogin;
+    Button btnLogin,btnSignup;
     TextView registerNow;
 
 //    @BindView(R.id.root)
@@ -50,6 +50,15 @@ public class LoginActivity extends AppCompatActivity {
 
         btnLogin= findViewById(R.id.btnLogin);
         registerNow = findViewById(R.id.linkRegistration);
+        btnSignup= findViewById(R.id.btnSignup);
+
+        btnSignup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, RegistrationActivity.class);
+                startActivity(intent);
+            }
+        });
 
         registerNow.setOnClickListener(new View.OnClickListener() {
             @Override
