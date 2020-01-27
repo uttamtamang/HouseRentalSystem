@@ -26,7 +26,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="10dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -37,7 +38,7 @@
                 android:textColor="#B8B8B8"
                 android:textSize="30dp"
                 android:textStyle="bold" />
-            <AutoCompleteTextView
+            <EditText
                 android:id="@+id/userName"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
@@ -51,7 +52,7 @@
                 android:textSize="15sp"
                 android:textColor="#B8B8B8"/>
 
-            <AutoCompleteTextView
+            <EditText
                 android:id="@+id/userAddress"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
@@ -66,7 +67,7 @@
                 android:textSize="15sp"
                 android:textColor="#B8B8B8"/>
 
-            <AutoCompleteTextView
+            <EditText
                 android:id="@+id/userPhone"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
@@ -82,7 +83,7 @@
                 android:textColor="#B8B8B8"/>
 
 
-            <AutoCompleteTextView
+            <EditText
                 android:id="@+id/userEmail"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
@@ -97,8 +98,8 @@
                 android:textSize="15sp"
                 android:textColor="#B8B8B8"/>
 
-            <AutoCompleteTextView
-                android:id="@+id/userPassword"
+            <EditText
+                android:id="@+id/userRPassword"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginStart="15dp"
@@ -113,7 +114,7 @@
                 android:textSize="15sp"
                 android:textColor="#B8B8B8"/>
 
-            <AutoCompleteTextView
+            <EditText
                 android:id="@+id/userConfirmPassword"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"

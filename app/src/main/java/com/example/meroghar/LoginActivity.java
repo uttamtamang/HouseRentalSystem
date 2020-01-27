@@ -39,13 +39,13 @@ public class LoginActivity extends AppCompatActivity {
         getSupportActionBar().hide();
 
         //THIS WILL MAKE YOUR STATUS BAR TRANSPARENT
-        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.LOLLIPOP){
-            getWindow().setFlags(
-                    WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
-                    WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
-            );
-            getWindow().setStatusBarColor(Color.TRANSPARENT);
-        }
+//        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.LOLLIPOP){
+//            getWindow().setFlags(
+//                    WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+//                    WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+//            );
+//            getWindow().setStatusBarColor(Color.TRANSPARENT);
+//        }
 
 
         btnLogin= findViewById(R.id.btnLogin);
