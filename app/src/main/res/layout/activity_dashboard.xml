@@ -21,6 +21,9 @@
         android:layout_alignParentBottom="true"
         app:menu="@menu/bottom_navigation"
         android:background="?android:attr/windowBackground"
+        android:animateLayoutChanges="false"
+        app:labelVisibilityMode="unlabeled"
+        app:itemIconSize="30dp"
         />
 
 </RelativeLayout>

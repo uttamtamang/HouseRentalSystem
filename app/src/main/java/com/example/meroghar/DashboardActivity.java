@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.example.meroghar.Fragments.FavoritesFragment;
-import com.example.meroghar.Fragments.HomeFragment;
+import com.example.meroghar.Fragments.DashboardFragment;
 import com.example.meroghar.Fragments.PropertiesFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -25,7 +25,7 @@ public class DashboardActivity extends AppCompatActivity {
         bottomNav.setOnNavigationItemSelectedListener(navListner);
 
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                new HomeFragment()).commit();
+                new DashboardFragment()).commit();
     }
     private BottomNavigationView.OnNavigationItemSelectedListener navListner =
             new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -35,7 +35,7 @@ public class DashboardActivity extends AppCompatActivity {
                     switch (item.getItemId()){
 
                         case R.id.nav_home:
-                            selectFragment = new HomeFragment();
+                            selectFragment = new DashboardFragment();
                             break;
                         case R.id.nav_favorite:
                             selectFragment = new FavoritesFragment();

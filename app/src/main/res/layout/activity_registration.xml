@@ -18,11 +18,6 @@
 <!--        android:layout_height="match_parent"-->
 <!--        android:src="#80000000"/>-->
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        >
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -33,7 +28,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_margin="15dp"
+                android:layout_margin="10dp"
                 android:text="REGISTER"
                 android:textColor="#B8B8B8"
                 android:textSize="30dp"
@@ -106,7 +101,7 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="15dp"
                 android:background="@drawable/rounded_textinput"
-                android:drawableLeft="@drawable/ic_lock_outline_black_24dp"
+                android:drawableLeft="@drawable/key"
                 android:drawablePadding="5dp"
                 android:hint="password"
                 android:inputType="textPassword"
@@ -122,7 +117,7 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="15dp"
                 android:background="@drawable/rounded_textinput"
-                android:drawableLeft="@drawable/ic_lock_outline_black_24dp"
+                android:drawableLeft="@drawable/key"
                 android:drawablePadding="5dp"
                 android:hint="Confirm password"
                 android:inputType="textPassword"
@@ -144,12 +139,11 @@
                 android:id="@+id/btnBackToLogin"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_margin="15dp"
+                android:layout_marginHorizontal="15dp"
                 android:background="@drawable/button_background"
                 android:text="BACK TO LOGIN"
                 android:textColor="#fff"
                 android:textSize="15sp" />
         </LinearLayout>
-    </ScrollView>
 
 </RelativeLayout>
