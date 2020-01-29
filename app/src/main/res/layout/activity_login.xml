@@ -44,7 +44,7 @@
                 android:drawableLeft="@drawable/ic_mail_outline_black_24dp"
                 android:drawablePadding="5dp"
                 android:hint="user email"
-                android:textColor="#B8B8B8"
+                android:textColor="#566573"
                 android:paddingStart="10dp"
                 android:textSize="15sp"
                 android:singleLine="true"/>
@@ -61,7 +61,7 @@
                 android:drawableLeft="@drawable/ic_lock_outline_black_24dp"
                 android:drawablePadding="5dp"
                 android:hint="password"
-                android:textColor="#B8B8B8"
+                android:textColor="#566573"
                 android:inputType="textPassword"
                 android:paddingStart="10dp"
                 android:textSize="15sp"

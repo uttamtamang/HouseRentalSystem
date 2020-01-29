@@ -21,7 +21,7 @@ import retrofit2.Response;
 public class RegistrationActivity extends AppCompatActivity {
 
     private EditText etFullName, etPhone, etAddress, etEmail, etPassword, etConfirmPassword;
-    private Button Register;
+    private Button Register, backLogin;
 
     String imagePath;
     private String profilePicture="";
@@ -49,11 +49,20 @@ public class RegistrationActivity extends AppCompatActivity {
         etConfirmPassword = findViewById(R.id.userConfirmPassword);
 
         Register = findViewById(R.id.btnRegister);
+        backLogin= findViewById(R.id.btnBackToLogin);
 
         Register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 signup();
+            }
+        });
+
+        backLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(RegistrationActivity.this, LoginActivity.class);
+                startActivity(intent);
             }
         });
 
