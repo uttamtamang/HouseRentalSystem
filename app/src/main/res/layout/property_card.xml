@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp">
+
+<!--    <RelativeLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:id="@+id/parentRelative"-->
+<!--        android:layout_margin="10dp"-->
+<!--        >-->
+
+<!--        <ImageView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="200dp"-->
+<!--            android:id="@+id/imgProperty"-->
+<!--            android:src="@drawable/logo2"-->
+<!--            android:padding="5dp">-->
+
+<!--        </ImageView>-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:id="@+id/propertyTitle"-->
+<!--            android:toB="@+id/imgProperty"-->
+<!--            android:padding="5dp"-->
+<!--            android:textSize="15sp"-->
+<!--            android:hint="This is title of property">-->
+
+<!--        </TextView>-->
+
+    <ImageView
+        android:id="@+id/imgProperty"
+        android:layout_width="match_parent"
+        android:layout_height="175dp"
+        android:padding="5dp"
+        android:src="@drawable/logo2" />
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/grid"
+        android:columnCount="2"
+        android:rowCount="1"
+        android:layout_gravity="center_horizontal"
+        >
+
+        <Button
+            android:layout_width="185dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/propertyPurpose"
+            android:text="Sell"
+            android:clickable="false"
+            android:background="@drawable/button_buysell"
+            android:textColor="#fff"
+            android:layout_marginRight="15dp">
+
+        </Button>
+        <Button
+            android:layout_width="185dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/wishlist"
+            android:text="Add to Wishlist"
+            android:background="@drawable/button_wishlist"
+            android:textColor="#fff"
+            android:layout_marginLeft="5dp"
+            >
+
+        </Button>
+        
+    </GridLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/propertyTitle"
+        android:hint="Title of the Property"
+        android:layout_marginVertical="5dp"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/propertyPrice"
+        android:hint="Price of the Property"
+        android:layout_marginVertical="5dp"
+        android:drawableStart="@drawable/ic_attach_money_black_24dp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/propertyLocation"
+        android:drawableStart="@drawable/ic_place_black_24dp"
+        android:hint="Location of the Property"
+        android:layout_marginVertical="5dp"
+
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/viewProperty"
+        android:text="View More details >>"
+        android:background="@drawable/button_background"
+        android:textColor="#fff"
+        android:textSize="15sp"
+        />
+
+    
+
+</LinearLayout>
