@@ -54,7 +54,15 @@ public class RegistrationActivity extends AppCompatActivity {
         Register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                signup();
+                if(etPassword.getText().toString().equals(etConfirmPassword.getText().toString())){
+                    signup();
+                }
+                else{
+                    Toast.makeText(RegistrationActivity.this, "Password does not match", Toast.LENGTH_SHORT).show();
+                    etPassword.requestFocus();
+                    return;
+                }
+
             }
         });
 
@@ -75,14 +83,9 @@ public class RegistrationActivity extends AppCompatActivity {
         phone= etPhone.getText().toString();
         email= etEmail.getText().toString();
         password= etPassword.getText().toString();
-        cpassword= etConfirmPassword.getText().toString();
+        //cpassword= etConfirmPassword.getText().toString();
 
-        if(password == cpassword){
-            Toast.makeText(RegistrationActivity.this, "Password and confirm password doesn't matched.",
-                    Toast.LENGTH_LONG).show();
 
-        }
-        else{
             User user = new User(fullname, address, phone, email, password);
             UserApi userApi = Url.getInstance().create(UserApi.class);
             Call<Void> signup = userApi.signup(user);
@@ -106,7 +109,7 @@ public class RegistrationActivity extends AppCompatActivity {
                 }
             });
 
-        }
+
 
 
     }
