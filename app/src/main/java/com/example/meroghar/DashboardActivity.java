@@ -25,8 +25,6 @@ import com.google.android.material.navigation.NavigationView;
 
 public class DashboardActivity extends AppCompatActivity {
 
-    private AppBarConfiguration mAppBarConfiguration;
-    DrawerLayout drawer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,26 +32,17 @@ public class DashboardActivity extends AppCompatActivity {
         setContentView(R.layout.activity_dashboard);
 
 
-        drawer = findViewById(R.id.drawer_layout);
-        NavigationView navigationView = findViewById(R.id.nav_view);
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_send)
-                .setDrawerLayout(drawer)
-                .build();
-
-
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-        NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
-        NavigationUI.setupWithNavController(navigationView, navController);
-
         getSupportActionBar().hide();
+
+//        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+//        NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
+//        NavigationUI.setupWithNavController(navigationView, navController);
+
 
         BottomNavigationView bottomNav = findViewById(R.id.bottom_nav);
         bottomNav.setOnNavigationItemSelectedListener(navListner);
-//        getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,
-//                new DashboardFragment()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                new DashboardFragment()).commit();
 
     }
     private BottomNavigationView.OnNavigationItemSelectedListener navListner =
@@ -75,12 +64,11 @@ public class DashboardActivity extends AppCompatActivity {
                             break;
 
                         case R.id.nav_profile:
-                            drawer.openDrawer(GravityCompat.START);
                             return true;
 
 
                     }
-                    getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                             selectFragment).commit();
                     return true;
                 }
