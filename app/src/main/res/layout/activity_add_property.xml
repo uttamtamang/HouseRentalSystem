@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddPropertyActivity">
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="vertical"
+       android:layout_margin="10dp">
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:textStyle="bold"
+           android:text="My Property"
+           android:textSize="20sp"
+           android:layout_marginStart="5dp">
+
+       </TextView>
+       <ImageView
+           android:layout_width="200dp"
+           android:layout_height="150dp"
+           android:id="@+id/propertyImage"
+           android:src="@drawable/logo"
+           android:layout_gravity="center"
+           android:layout_marginVertical="10dp">
+
+       </ImageView>
+
+       <EditText
+           android:id="@+id/propertyTitle"
+           android:layout_width="match_parent"
+           android:layout_height="50dp"
+           android:layout_marginStart="15dp"
+           android:layout_marginEnd="15dp"
+           android:background="@drawable/rounded_textinput"
+           android:hint="Title of the property."
+           android:padding="10dp"
+           android:textSize="15sp"
+           android:layout_margin="5dp"/>
+
+       <EditText
+           android:id="@+id/propertyDescription"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:lines="3"
+           android:hint="Description of the property"
+           android:background="@drawable/rounded_textinput"
+           android:layout_marginStart="15dp"
+           android:layout_marginEnd="15dp"
+           android:padding="10dp"
+           android:textSize="15sp"
+           android:layout_margin="5dp"/>
+
+       <EditText
+           android:id="@+id/propertyPrice"
+           android:layout_width="match_parent"
+           android:layout_height="50dp"
+           android:layout_marginStart="15dp"
+           android:layout_marginEnd="15dp"
+           android:background="@drawable/rounded_textinput"
+           android:hint="Price of the property."
+           android:padding="10dp"
+           android:textSize="15sp"
+           android:layout_margin="5dp"/>
+       <EditText
+           android:id="@+id/propertyAddress"
+           android:layout_width="match_parent"
+           android:layout_height="50dp"
+           android:layout_marginStart="15dp"
+           android:layout_marginEnd="15dp"
+           android:background="@drawable/rounded_textinput"
+           android:hint="Address of the property."
+           android:padding="10dp"
+           android:textSize="15sp"
+           android:layout_margin="5dp"/>
+       <Spinner
+           android:layout_width="match_parent"
+           android:layout_height="50dp"
+           android:id="@+id/propertyCategory"
+           android:spinnerMode="dropdown"
+           android:layout_margin="5dp"
+           android:background="@color/colorYellow"/>
+       <Spinner
+           android:layout_width="match_parent"
+           android:layout_height="50dp"
+           android:id="@+id/propertyPurpose"
+           android:spinnerMode="dropdown"
+           android:layout_marginBottom="5dp"
+           android:layout_marginHorizontal="5dp"
+           android:background="@color/colorPanel"/>
+
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="Facilities"
+           android:textSize="16sp"
+           android:layout_marginHorizontal="5dp"
+           android:layout_marginTop="5dp"/>
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="Rooms"
+           android:textSize="16sp"
+           android:layout_marginHorizontal="5dp"
+           android:layout_marginTop="5dp"/>
+
+
+       <Button
+           android:id="@+id/btnAddMyProperty"
+           android:layout_width="match_parent"
+           android:layout_height="50dp"
+           android:layout_marginHorizontal="5dp"
+           android:layout_marginTop="5dp"
+           android:background="@drawable/button_add_property"
+           android:text="add my property"
+           android:textColor="#fff"
+           android:textSize="15sp" />
+
+   </LinearLayout>
+</ScrollView>
