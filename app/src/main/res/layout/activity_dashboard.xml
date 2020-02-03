@@ -22,6 +22,7 @@
         app:menu="@menu/bottom_navigation"
         android:background="?android:attr/windowBackground"
         android:animateLayoutChanges="false"
+        app:itemHorizontalTranslationEnabled="false"
         app:itemIconSize="30dp"
         />
 

@@ -21,11 +21,11 @@
             android:layout_marginEnd="10dp"/>
 
     </RelativeLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/advanceFilter"
-        android:to="@+id/categorySection"
         >
         <TextView
             android:layout_width="match_parent"
@@ -75,7 +75,7 @@
             android:layout_marginEnd="10dp"/>
 
 
-        <androidx.appcompat.widget.AppCompatSpinner
+        <Spinner
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:id="@+id/startPrice"
@@ -96,7 +96,7 @@
             android:layout_marginEnd="5dp"
             />
 
-        <androidx.appcompat.widget.AppCompatSpinner
+        <Spinner
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:id="@+id/endPrice"
@@ -109,7 +109,7 @@
     <Button
         android:id="@+id/btnSearch"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="50dp"
         android:layout_marginTop="15dp"
         android:background="@drawable/button_background"
         android:text="Search"

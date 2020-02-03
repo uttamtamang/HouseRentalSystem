@@ -18,6 +18,7 @@ import android.view.View;
 
 import com.example.meroghar.Fragments.FavoritesFragment;
 import com.example.meroghar.Fragments.DashboardFragment;
+import com.example.meroghar.Fragments.ProfileFragment;
 import com.example.meroghar.Fragments.PropertiesFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -64,8 +65,8 @@ public class DashboardActivity extends AppCompatActivity {
                             break;
 
                         case R.id.nav_profile:
-                            return true;
-
+                            selectFragment = new ProfileFragment();
+                            break;
 
                     }
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
