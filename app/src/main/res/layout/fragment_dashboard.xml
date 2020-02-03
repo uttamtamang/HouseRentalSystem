@@ -6,22 +6,93 @@
     android:orientation="vertical"
     tools:context=".Fragments.DashboardFragment"
     android:layout_margin="10dp">
-
-    <RelativeLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/categorySection"
-        >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Categories"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"/>
+        android:text="Categories"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:id="@+id/categorySection"/>
 
-    </RelativeLayout>
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15px"
+                android:alignmentMode="alignMargins"
+                android:columnCount="2"
+                android:columnOrderPreserved="false"
+                android:rowCount="1"
+                >
 
+                <androidx.cardview.widget.CardView
+                    android:layout_width="170dp"
+                    android:layout_height="150dp"
+                    android:layout_marginStart="12dp"
+
+                    >
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_margin="20dp"
+                        >
+                        <ImageView
+                            android:layout_width="125dp"
+                            android:layout_height="125dp"
+                            android:id="@+id/imageResidental"
+                            android:src="@drawable/residental">
+
+                        </ImageView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/categoryText1"
+                            android:layout_below="@+id/imageResidental"
+                            android:text="Residental"
+                            android:gravity="center"
+                            android:layout_marginStart="30dp">
+
+                        </TextView>
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    >
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="20dp"
+                        >
+                        <ImageView
+                            android:layout_width="125dp"
+                            android:layout_height="125dp"
+                            android:id="@+id/imageAppartment"
+                            android:src="@drawable/apartment">
+
+                        </ImageView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/categoryText2"
+                            android:layout_below="@+id/imageAppartment"
+                            android:text="Appartment"
+                            android:gravity="center"
+                            android:layout_marginStart="30dp">
+
+                        </TextView>
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+            </GridLayout>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
