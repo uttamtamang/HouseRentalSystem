@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Fragments.ProfileFragment"
-    android:background="@drawable/background2">
+    android:background="@drawable/background">
 
 <!--    <GridLayout-->
 <!--        android:id="@+id/mainGrid"-->
@@ -149,10 +149,12 @@
             android:id="@+id/btnEditProfile"
             android:layout_marginTop="10dp"
             android:layout_marginHorizontal="10dp"
-            android:background="@drawable/button_background"
+            android:background="@drawable/button_view_profile"
             android:text="Edit Profile"
             android:textColor="#fff"
-            android:textSize="15sp"/>
+            android:textSize="15sp"
+            android:padding="10dp"
+            android:drawableStart="@drawable/resume"/>
 
 
         <Button
@@ -161,30 +163,37 @@
             android:id="@+id/btnAddProperty"
             android:layout_marginTop="10dp"
             android:layout_marginHorizontal="10dp"
-            android:background="@drawable/button_background"
+            android:background="@drawable/button_add_property"
             android:text="Add property"
             android:textColor="#fff"
-            android:textSize="15sp"/>
+            android:textSize="15sp"
+            android:padding="10dp"
+            android:drawableStart="@drawable/add"/>
         <Button
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:id="@+id/btnViewProperty"
             android:layout_marginTop="10dp"
             android:layout_marginHorizontal="10dp"
-            android:background="@drawable/button_background"
+            android:background="@drawable/button_view_property"
             android:text="View my property"
             android:textColor="#fff"
-            android:textSize="15sp"/>
+            android:textSize="15sp"
+            android:padding="10dp"
+            android:drawableStart="@drawable/file"/>
         <Button
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:id="@+id/btnLogout"
             android:layout_marginTop="10dp"
             android:layout_marginHorizontal="10dp"
-            android:background="@drawable/button_background"
+            android:background="@drawable/button_log_out"
+            android:padding="10dp"
             android:text="LOGOUT"
             android:textColor="#fff"
-            android:textSize="15sp"/>
+            android:textSize="15sp"
+            android:drawableStart="@drawable/logout"
+            />
 
 
 
