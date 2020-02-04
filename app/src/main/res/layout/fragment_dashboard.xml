@@ -4,20 +4,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     tools:context=".Fragments.DashboardFragment"
-    android:layout_margin="10dp">
+    android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <ScrollView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Categories"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:id="@+id/categorySection"
-        android:textStyle="bold"
-        android:textSize="20sp"/>
+       >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Categories"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:id="@+id/categorySection"
+                android:textStyle="bold"
+                android:textSize="20sp"/>
 
             <GridLayout
                 android:layout_width="match_parent"
@@ -105,173 +112,176 @@
                 </androidx.cardview.widget.CardView>
             </GridLayout>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Property For"
-            android:id="@+id/propertyFor"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:textStyle="bold"
-            android:textSize="16sp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Property For"
+                android:id="@+id/propertyFor"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:textStyle="bold"
+                android:textSize="16sp">
 
-        </TextView>
+            </TextView>
 
-        <GridLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="15px"
-            android:alignmentMode="alignMargins"
-            android:columnCount="2"
-            android:columnOrderPreserved="false"
-            android:rowCount="1"
-            >
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="170dp"
-                android:layout_height="75dp"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="5px"
-                android:layout_marginBottom="5dp"
-                app:cardCornerRadius="10sp"
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15px"
+                android:alignmentMode="alignMargins"
+                android:columnCount="2"
+                android:columnOrderPreserved="false"
+                android:rowCount="1"
                 >
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:layout_margin="5dp"
+                <androidx.cardview.widget.CardView
+                    android:layout_width="170dp"
+                    android:layout_height="75dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5px"
+                    android:layout_marginBottom="5dp"
+                    app:cardCornerRadius="10sp"
                     >
-                    <ImageView
-                        android:layout_width="64dp"
-                        android:layout_height="64dp"
-                        android:id="@+id/imageSale"
-                        android:src="@drawable/sale">
 
-                    </ImageView>
-                </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_margin="5dp"
+                        >
+                        <ImageView
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:id="@+id/imageSale"
+                            android:src="@drawable/sale">
 
-            </androidx.cardview.widget.CardView>
+                        </ImageView>
+                    </RelativeLayout>
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="170dp"
-                android:layout_height="75dp"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="5px"
-                android:layout_marginBottom="5dp"
-                app:cardCornerRadius="10sp"
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="170dp"
+                    android:layout_height="75dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="5px"
+                    android:layout_marginBottom="5dp"
+                    app:cardCornerRadius="10sp"
+                    >
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_margin="5dp"
+                        >
+                        <ImageView
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:id="@+id/imageRent"
+                            android:src="@drawable/rent">
+
+                        </ImageView>
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+            </GridLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/advanceFilter"
                 >
-
-                <RelativeLayout
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:id="@+id/propertyLocation"
+                    android:text="Location"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:id="@+id/etLocation"
+                    android:layout_below="@+id/propertyLocation"
+                    android:drawableLeft="@drawable/ic_place_black_24dp"
+                    android:background="@drawable/rounded_textinput"
+                    android:drawablePadding="8dp"
+                    android:hint="Enter location"
+                    android:textSize="15dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/propertyPrice"
+                    android:text="Price"
+                    android:layout_below="@+id/etLocation"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:id="@+id/startPrice"
+                    android:layout_below="@+id/propertyPrice"
+                    android:spinnerMode="dropdown"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@color/colorPanel"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/to"
+                    android:layout_below="@id/startPrice"
+                    android:text="To"
                     android:gravity="center"
-                    android:layout_margin="5dp"
-                    >
-                    <ImageView
-                        android:layout_width="64dp"
-                        android:layout_height="64dp"
-                        android:id="@+id/imageRent"
-                        android:src="@drawable/rent">
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    />
 
-                    </ImageView>
-                </RelativeLayout>
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:id="@+id/endPrice"
+                    android:layout_below="@+id/to"
+                    android:spinnerMode="dropdown"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@color/colorPanel"/>
+            </RelativeLayout>
 
-            </androidx.cardview.widget.CardView>
-        </GridLayout>
+            <Button
+                android:id="@+id/btnSearch"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginVertical="15dp"
+                android:background="@drawable/button_background"
+                android:text="Search"
+                android:textColor="#fff"
+                android:textSize="15sp" />
+        </LinearLayout>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/advanceFilter"
-        >
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/propertyLocation"
-            android:text="Location"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:textSize="16sp"
-            android:textStyle="bold"/>
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:id="@+id/etLocation"
-            android:layout_below="@+id/propertyLocation"
-            android:drawableLeft="@drawable/ic_place_black_24dp"
-            android:background="@drawable/rounded_textinput"
-            android:drawablePadding="8dp"
-            android:hint="Enter location"
-            android:textSize="15dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            />
-
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/propertyPrice"
-            android:text="Price"
-            android:layout_below="@+id/etLocation"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:textSize="16sp"
-            android:textStyle="bold"/>
-
-
-        <Spinner
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:id="@+id/startPrice"
-            android:layout_below="@+id/propertyPrice"
-            android:spinnerMode="dropdown"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:background="@color/colorPanel"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/to"
-            android:layout_below="@id/startPrice"
-            android:text="To"
-            android:gravity="center"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="5dp"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            />
-
-        <Spinner
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:id="@+id/endPrice"
-            android:layout_below="@+id/to"
-            android:spinnerMode="dropdown"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:background="@color/colorPanel"/>
-    </RelativeLayout>
-
-    <Button
-        android:id="@+id/btnSearch"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/button_background"
-        android:text="Search"
-        android:textColor="#fff"
-        android:textSize="15sp" />
+    </ScrollView>
 
 
 </LinearLayout>

@@ -77,17 +77,37 @@
            android:padding="10dp"
            android:textSize="15sp"
            android:layout_margin="5dp"/>
+
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="Category"
+           android:textSize="18sp"
+           android:textStyle="bold"
+           android:layout_marginHorizontal="5dp"
+           android:layout_margin="5dp"/>
+
        <Spinner
            android:layout_width="match_parent"
            android:layout_height="50dp"
-           android:id="@+id/propertyCategory"
+           android:id="@+id/propertyCategorySpinner"
            android:spinnerMode="dropdown"
            android:layout_margin="5dp"
            android:background="@color/colorYellow"/>
+
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="Purpose"
+           android:textSize="18sp"
+           android:textStyle="bold"
+           android:layout_marginHorizontal="5dp"
+           android:layout_margin="5dp"/>
+
        <Spinner
            android:layout_width="match_parent"
            android:layout_height="50dp"
-           android:id="@+id/propertyPurpose"
+           android:id="@+id/propertyPurposeSpinner"
            android:spinnerMode="dropdown"
            android:layout_marginBottom="5dp"
            android:layout_marginHorizontal="5dp"
@@ -97,14 +117,16 @@
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
            android:text="Facilities"
-           android:textSize="16sp"
+           android:textSize="18sp"
+           android:textStyle="bold"
            android:layout_marginHorizontal="5dp"
            android:layout_marginTop="5dp"/>
        <TextView
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
            android:text="Rooms"
-           android:textSize="16sp"
+           android:textSize="18sp"
+           android:textStyle="bold"
            android:layout_marginHorizontal="5dp"
            android:layout_marginTop="5dp"/>
 
@@ -114,7 +136,7 @@
            android:layout_width="match_parent"
            android:layout_height="50dp"
            android:layout_marginHorizontal="5dp"
-           android:layout_marginTop="5dp"
+           android:layout_marginVertical="5dp"
            android:background="@drawable/button_add_property"
            android:text="add my property"
            android:textColor="#fff"

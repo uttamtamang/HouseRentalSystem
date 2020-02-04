@@ -1,18 +1,22 @@
 package com.example.meroghar.ServerResponse;
 
 public class ImageResponse {
-    public String getProfileimage() {
-        return profileimage;
+
+    public ImageResponse(String filename) {
+        this.filename = filename;
     }
 
-    public void setProfileimage(String profileimage) {
-        this.profileimage = profileimage;
+    public String getFilename() {
+        return filename;
     }
 
-    private String profileimage;
-
-    public ImageResponse(String profileimage) {
-        this.profileimage = profileimage;
+    public void setFilename(String filename) {
+        this.filename = filename;
     }
+
+    private String filename;
+
+
 
 }
+

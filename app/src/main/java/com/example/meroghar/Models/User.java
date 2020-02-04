@@ -18,13 +18,13 @@ public class User {
         this.profilePicture = profilePicture;
     }
 
-    public User(String fullName, String address, String phone, String email, String password) {
-        this.fullName = fullName;
-        this.address = address;
-        this.phone = phone;
-        this.email = email;
-        this.password = password;
-    }
+//    public User(String fullName, String address, String phone, String email, String password) {
+//        this.fullName = fullName;
+//        this.address = address;
+//        this.phone = phone;
+//        this.email = email;
+//        this.password = password;
+//    }
 
     public User(String email, String password) {
         this.email = email;
@@ -78,8 +78,6 @@ public class User {
     public void setProfilePicture(String profilePicture) {
         this.profilePicture = profilePicture;
     }
-
-
 
 
 }
