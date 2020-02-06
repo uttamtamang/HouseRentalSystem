@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,6 +19,7 @@ import com.example.meroghar.R;
 
 public class PropertiesFragment extends Fragment {
 
+    RecyclerView propertyRecyclerView;
 
 
     @Override
@@ -25,6 +27,8 @@ public class PropertiesFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_properties, container, false);
+
+        propertyRecyclerView = v.findViewById(R.id.propertyRecyclerView);
 
         return v;
 
