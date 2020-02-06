@@ -11,6 +11,7 @@ import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 import retrofit2.http.Part;
 
 public interface UserApi {
@@ -27,5 +28,8 @@ public interface UserApi {
 
     @GET("users/myProfile")
     Call<User> retrievUserdetail(@Header("Authorization")String token);
+
+    @PUT("users/myProfile")
+    Call<User> updateUserProfile(@Header("Authorization") String token, @Body User user);
 
 }

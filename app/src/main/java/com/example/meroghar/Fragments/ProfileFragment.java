@@ -35,6 +35,7 @@ import static com.example.meroghar.URL.Url.token;
 
 public class ProfileFragment extends Fragment {
 
+    public static User globalUser;
     Button btnEditProfile, btnAddProperty, btnViewProperty, btnLogout;
 
     TextView tvemail, tvaddress;
@@ -102,8 +103,10 @@ public class ProfileFragment extends Fragment {
                     Toast.makeText(getContext(),"Code"+response.code(),Toast.LENGTH_LONG).show();
                     return;
                 }
+                globalUser = response.body();
 
                 String imagePath= Url.imagePath +response.body().getProfilePicture();
+                Picasso.get().load(imagePath).into(tvuserProfilePic);
                 String full_name=response.body().getFullName();
                 String email =response.body().getEmail();
                 String address =response.body().getAddress();
@@ -115,8 +118,6 @@ public class ProfileFragment extends Fragment {
                 tvemail.setText(email);
                 tvaddress.setText(address);
                 //phone.setText(phone_number);
-
-                Picasso.get().load(imagePath).into(tvuserProfilePic);
 
             }
 

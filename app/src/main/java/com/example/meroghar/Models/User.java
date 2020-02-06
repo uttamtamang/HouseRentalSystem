@@ -3,6 +3,13 @@ package com.example.meroghar.Models;
 public class User {
 
     private String fullName;
+
+    public User(String fullName, String address, String phone) {
+        this.fullName = fullName;
+        this.address = address;
+        this.phone = phone;
+    }
+
     private String address;
     private String phone;
     private String email;
