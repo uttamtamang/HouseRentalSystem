@@ -84,7 +84,10 @@ public class ProfileFragment extends Fragment {
                 if(token != "Bearer "){
                    Url.token ="Bearer ";
                     Intent intent = new Intent(getActivity(), LoginActivity.class);
+                    //intent.setFlags(intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(intent);
+
+
                 }
 
             }

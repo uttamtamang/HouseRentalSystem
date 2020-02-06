@@ -2,10 +2,15 @@ package com.example.meroghar;
 
 import androidx.annotation.BinderThread;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
+import android.app.Notification;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
+import android.net.ConnectivityManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -17,10 +22,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.eightbitlab.supportrenderscriptblur.SupportRenderScriptBlur;
+import com.example.meroghar.Broadcast.BroadCastReceiver;
 import com.example.meroghar.Interfaces.UserApi;
 import com.example.meroghar.Models.User;
 import com.example.meroghar.ServerResponse.SignUpResponse;
 import com.example.meroghar.URL.Url;
+import com.example.meroghar.createchannel.CreateChannel;
 
 //import butterknife.BindView;
 import eightbitlab.com.blurview.BlurView;
@@ -32,6 +39,7 @@ public class LoginActivity extends AppCompatActivity {
     EditText userEmail, userPassword;
     Button btnLogin,btnSignup;
     TextView registerNow;
+    NotificationManagerCompat notificationManagerCompat;
 
 //    @BindView(R.id.root)
 //    ViewGroup root;
@@ -43,8 +51,15 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+
         //This will hide your TITLE BAR
         getSupportActionBar().hide();
+
+
+//Notifier
+        notificationManagerCompat = NotificationManagerCompat.from(this);
+        CreateChannel channel = new CreateChannel(this);
+        channel.createChannel();
 
         //THIS WILL MAKE YOUR STATUS BAR TRANSPARENT
 //        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.LOLLIPOP){
@@ -112,9 +127,10 @@ public class LoginActivity extends AppCompatActivity {
                     return;
                 }
                 else{
-                Toast.makeText(LoginActivity.this, "Login Successful.", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(LoginActivity.this, "Login Successful.", Toast.LENGTH_SHORT).show();
                 Url.token += response.body().getToken();
-                Toast.makeText(LoginActivity.this, "Token " + response.body().getToken(), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(LoginActivity.this, "Token " + response.body().getToken(), Toast.LENGTH_SHORT).show();
+                    notifiy();
                 openDashBoard();
                 }
 
@@ -132,5 +148,31 @@ public class LoginActivity extends AppCompatActivity {
     public void openDashBoard(){
         Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
         startActivity(intent);
+    }
+
+    //Nofify Function
+    private void notifiy() {
+        Notification notification = new NotificationCompat.Builder(this, CreateChannel.CHANNEL_1)
+                .setSmallIcon(R.drawable.ic_home_black_24dp)
+                .setContentTitle("Mero Ghar")
+                .setContentText("Login success Boss " + userEmail.getText().toString())
+                .setCategory(NotificationCompat.CATEGORY_MESSAGE)
+                .build();
+
+        notificationManagerCompat.notify(1, notification);
+    }
+//doubt
+    BroadCastReceiver broadCastReceiver= new BroadCastReceiver(this);
+
+    protected void onStart(){
+        super.onStart();
+        IntentFilter intentFilter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
+        registerReceiver(broadCastReceiver,intentFilter);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        unregisterReceiver(broadCastReceiver);
     }
 }
