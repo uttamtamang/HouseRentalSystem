@@ -11,16 +11,24 @@
         android:layout_width="125dp"
         android:layout_height="125dp"
         android:src="@drawable/userimg"
-        android:id="@+id/userProfilePic"
+        android:id="@+id/myuserProfilePic"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp"
         />
+<!--    <ImageView-->
+<!--        android:layout_width="125dp"-->
+<!--        android:layout_height="125dp"-->
+<!--        android:src="@drawable/userimg"-->
+<!--        android:id="@+id/myuserProfilePic"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginTop="25dp"-->
+<!--        />-->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/userName"
         android:text="Hello this is user"
-        android:layout_below="@+id/userProfilePic"
+        android:layout_below="@+id/myuserProfilePic"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="5dp"
         android:textSize="20sp"

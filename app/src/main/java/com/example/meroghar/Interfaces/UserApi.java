@@ -7,6 +7,8 @@ import com.example.meroghar.ServerResponse.SignUpResponse;
 import okhttp3.MultipartBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.GET;
+import retrofit2.http.Header;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.Part;
@@ -22,5 +24,8 @@ public interface UserApi {
     @Multipart
     @POST("/upload")
     Call<ImageResponse> uploadImage(@Part MultipartBody.Part Profileimage);
+
+    @GET("users/myProfile")
+    Call<User> retrievUserdetail(@Header("Authorization")String token);
 
 }

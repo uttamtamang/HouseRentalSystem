@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileEditActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="10dp"
+                android:text="Update Profile"
+                android:textColor="#B8B8B8"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgProfileUpdate"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:src="@drawable/boy" />
+            <EditText
+                android:id="@+id/userNameUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:background="@drawable/rounded_textinput"
+                android:drawableLeft="@drawable/ic_person_outline_black_24dp"
+                android:drawablePadding="5dp"
+                android:hint="Full name"
+                android:paddingStart="10dp"
+                android:textSize="15sp"
+                android:textColor="#566573"/>
+
+            <EditText
+                android:id="@+id/userAddressUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:background="@drawable/rounded_textinput"
+                android:drawableLeft="@drawable/ic_place_black_24dp"
+                android:drawablePadding="5dp"
+                android:hint="Address"
+                android:paddingStart="10dp"
+                android:textSize="15sp"
+                android:textColor="#566573"/>
+
+            <EditText
+                android:id="@+id/userPhoneUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:background="@drawable/rounded_textinput"
+                android:drawableLeft="@drawable/ic_call_black_24dp"
+                android:drawablePadding="5dp"
+                android:hint="Phone"
+                android:paddingStart="10dp"
+                android:textSize="15sp"
+                android:textColor="#566573"/>
+
+            <EditText
+                android:id="@+id/userEmailUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:background="@drawable/rounded_textinput"
+                android:drawableLeft="@drawable/ic_mail_outline_black_24dp"
+                android:drawablePadding="5dp"
+                android:hint="user email"
+                android:paddingStart="10dp"
+                android:textSize="15sp"
+                android:textColor="#566573"
+                android:editable="false"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginVertical="5dp"
+                android:text="Note: You cannot change your email."
+                android:textStyle="italic"
+                android:textColor="@color/colorLight">
+
+            </TextView>
+
+
+            <Button
+                android:id="@+id/btnUpdateProfile"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="15dp"
+                android:background="@drawable/button_background"
+                android:text="update"
+                android:textColor="#fff"
+                android:textSize="15sp" />
+        </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

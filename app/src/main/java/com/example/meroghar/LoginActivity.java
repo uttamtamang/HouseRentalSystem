@@ -114,6 +114,7 @@ public class LoginActivity extends AppCompatActivity {
                 else{
                 Toast.makeText(LoginActivity.this, "Login Successful.", Toast.LENGTH_SHORT).show();
                 Url.token += response.body().getToken();
+                Toast.makeText(LoginActivity.this, "Token " + response.body().getToken(), Toast.LENGTH_SHORT).show();
                 openDashBoard();
                 }
 
