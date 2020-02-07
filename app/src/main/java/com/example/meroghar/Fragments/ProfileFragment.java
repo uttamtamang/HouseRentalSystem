@@ -86,8 +86,6 @@ public class ProfileFragment extends Fragment {
                     Intent intent = new Intent(getActivity(), LoginActivity.class);
                     //intent.setFlags(intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(intent);
-
-
                 }
 
             }
@@ -133,4 +131,5 @@ public class ProfileFragment extends Fragment {
 
 
     }
+
 }

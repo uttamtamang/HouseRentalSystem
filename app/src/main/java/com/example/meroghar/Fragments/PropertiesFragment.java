@@ -16,10 +16,14 @@ import android.widget.Button;
 import com.example.meroghar.AddPropertyActivity;
 import com.example.meroghar.R;
 
+import java.util.List;
+
 
 public class PropertiesFragment extends Fragment {
 
     RecyclerView propertyRecyclerView;
+
+   // public static List<>
 
 
     @Override
@@ -29,6 +33,10 @@ public class PropertiesFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_properties, container, false);
 
         propertyRecyclerView = v.findViewById(R.id.propertyRecyclerView);
+
+
+
+
 
         return v;
 
