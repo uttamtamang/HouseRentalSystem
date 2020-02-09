@@ -10,6 +10,8 @@ public class Url {
     public static String imagePath = BASE_URL + "upload/";
     public static String token = "Bearer ";
 
+    public static String id="";
+
 
     public static Retrofit getInstance() {
         Retrofit retrofit = new Retrofit.Builder()
