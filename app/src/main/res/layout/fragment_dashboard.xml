@@ -34,6 +34,7 @@
                 android:columnCount="2"
                 android:columnOrderPreserved="false"
                 android:rowCount="1"
+                android:layout_gravity="center"
                 >
 
                 <androidx.cardview.widget.CardView

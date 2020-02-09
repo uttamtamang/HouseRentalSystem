@@ -16,8 +16,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ProfileEditActivity"></activity>
-        <activity android:name=".AddPropertyActivity"></activity>
+        <activity android:name=".ProfileEditActivity" android:parentActivityName=".DashboardActivity"></activity>
+        <activity android:name=".AddPropertyActivity" android:parentActivityName=".DashboardActivity"></activity>
         <activity android:name=".DashboardActivity"></activity>
         <activity android:name=".MeroGharSplashScreenActivity" />
         <activity android:name=".RegistrationActivity" />

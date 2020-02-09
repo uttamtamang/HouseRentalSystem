@@ -18,4 +18,16 @@
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
     <string name="title_activity_profile">ProfileActivity</string>
+
+    <!-- Property Categories -->
+    <string-array name="categories">
+        <item>Residental</item>
+        <item>Appartment</item>
+    </string-array>
+
+    <!-- Property Purpose -->
+    <string-array name="purpose">
+        <item>For Sell</item>
+        <item>For Rent</item>
+    </string-array>
 </resources>

@@ -30,6 +30,9 @@ public class ProfileEditActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_edit);
 
+        //SETTING TITLE ON ACTION BAR
+        getSupportActionBar().setTitle("User profile update form");
+
         etFullName = findViewById(R.id.userNameUpdate);
         etAddress = findViewById(R.id.userAddressUpdate);
         etPhone = findViewById(R.id.userPhoneUpdate);
@@ -42,6 +45,13 @@ public class ProfileEditActivity extends AppCompatActivity {
         etAddress.setText(ProfileFragment.globalUser.getAddress());
         etPhone.setText(ProfileFragment.globalUser.getPhone());
         etEmail.setText(ProfileFragment.globalUser.getEmail());
+
+        etEmail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(ProfileEditActivity.this, "Sorry, you cannot update your email.", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         btnProfileUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
