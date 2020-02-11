@@ -17,6 +17,7 @@ public class Property {
     private List<Facility> facilityList;
     private List<Room> roomList;
 
+
     //CONSTRUCTIOR FOR CRUD
     public Property(String _id, String image, String title, String owner, String address,
                     String category, String purpose, String description, String price, List<Facility> facilityList,

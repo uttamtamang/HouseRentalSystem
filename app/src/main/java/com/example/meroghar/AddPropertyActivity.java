@@ -17,19 +17,25 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.meroghar.Fragments.ProfileFragment;
 import com.example.meroghar.Interfaces.PropertyApi;
 import com.example.meroghar.Interfaces.UserApi;
+import com.example.meroghar.Models.Facility;
+import com.example.meroghar.Models.Property;
+import com.example.meroghar.Models.Room;
 import com.example.meroghar.ServerResponse.ImageResponse;
 import com.example.meroghar.URL.Url;
 import com.example.meroghar.strictmode.StrictModeClass;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import retrofit2.Call;
+import retrofit2.Callback;
 import retrofit2.Response;
 
 import static com.example.meroghar.URL.Url.imagePath;
@@ -46,6 +52,9 @@ public class AddPropertyActivity extends AppCompatActivity {
     Spinner categorySpinner, purposeSpinner;
     CheckBox checkBox1, checkBox2, checkBox3, checkBox4,
             checkBox5, checkBox6, checkBox7, checkBox8, checkBox9;
+
+    List<Facility> facilityList;
+    List<Room> roomList;
 
     Button btnAddProperty;
     @Override
@@ -141,6 +150,41 @@ public class AddPropertyActivity extends AppCompatActivity {
 
 
     private void AddMyProperty() {
+        saveImage();
+
+        setFacilityList();
+
+        Property property = new Property(image ,etPropertyTitle.getText().toString(), ProfileFragment.globalUser.get_id(),
+                                            etPropertyAddress.getText().toString(),
+                                            categorySpinner.getSelectedItem().toString(),
+                                            purposeSpinner.getSelectedItem().toString(),
+                                            etPropertyDescription.getText().toString(),
+                                            etPropertyPrice.getText().toString(),
+                                            facilityList,
+                                            roomList
+                        );
+
+
+        PropertyApi propApi = Url.getInstance().create(PropertyApi.class);
+        Call<Void> propertyCall = propApi.postProperty(Url.token, property);
+
+        propertyCall.enqueue(new Callback<Void>() {
+            @Override
+            public void onResponse(Call<Void> call, Response<Void> response) {
+                if(!response.isSuccessful()){
+                    Toast.makeText(AddPropertyActivity.this, "error"+ response.body(), Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                Toast.makeText(AddPropertyActivity.this, "Added Successfully", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onFailure(Call<Void> call, Throwable t) {
+                Toast.makeText(AddPropertyActivity.this, "error"+ t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
         Intent intent = new Intent(AddPropertyActivity.this, DashboardActivity.class);
         startActivity(intent);
         Toast.makeText(AddPropertyActivity.this, "Property Added Successfully", Toast.LENGTH_SHORT).show();
@@ -169,5 +213,21 @@ public class AddPropertyActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
+    }
+
+    public void setFacilityList(){
+        if(checkBox1.isChecked()) facilityList.add(new Facility(checkBox1.getText().toString()));
+        if(checkBox2.isChecked()) facilityList.add(new Facility(checkBox2.getText().toString()));
+        if(checkBox3.isChecked()) facilityList.add(new Facility(checkBox3.getText().toString()));
+        if(checkBox4.isChecked()) facilityList.add(new Facility(checkBox4.getText().toString()));
+        if(checkBox5.isChecked()) facilityList.add(new Facility(checkBox5.getText().toString()));
+        if(checkBox6.isChecked()) facilityList.add(new Facility(checkBox6.getText().toString()));
+        if(checkBox7.isChecked()) facilityList.add(new Facility(checkBox7.getText().toString()));
+        if(checkBox8.isChecked()) facilityList.add(new Facility(checkBox8.getText().toString()));
+        if(checkBox9.isChecked()) facilityList.add(new Facility(checkBox9.getText().toString()));
+    }
+
+    public void setRoomList(){
+//        Room room = new Room(etBedroom.getText().toString(), )
     }
 }
