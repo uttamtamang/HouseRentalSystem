@@ -169,7 +169,8 @@ public class AddPropertyActivity extends AppCompatActivity {
                                             categorySpinner.getSelectedItem().toString(),
                                             purposeSpinner.getSelectedItem().toString(),
                                             etPropertyDescription.getText().toString(),
-                                            etPropertyPrice.getText().toString());
+                                            etPropertyPrice.getText().toString(), facilityList,
+                roomList);
 
 
         PropertyApi propApi = Url.getInstance().create(PropertyApi.class);
@@ -183,9 +184,6 @@ public class AddPropertyActivity extends AppCompatActivity {
                     return;
                 }
 
-                postId = response.body().get_id();
-                addRooms();
-                addFacilities();
                 Toast.makeText(AddPropertyActivity.this, "Added Successfully", Toast.LENGTH_SHORT).show();
             }
 
@@ -243,50 +241,50 @@ public class AddPropertyActivity extends AppCompatActivity {
         roomList.add(new Room(tvKitchen.getText().toString() ,etKitchenroom.getText().toString()));
     }
 
-    public void addRooms(){
-
-        for(int i = 0; i < roomList.size(); i++){
-            PropertyApi addRoomApi = Url.getInstance().create(PropertyApi.class);
-            Call<Void> addRoomcall = addRoomApi.postPropertyRoom(Url.token, postId, roomList.get(i));
-
-            addRoomcall.enqueue(new Callback<Void>() {
-                @Override
-                public void onResponse(Call<Void> call, Response<Void> response) {
-                    if(!response.isSuccessful()){
-                        Toast.makeText(AddPropertyActivity.this, "error with room"+ response.body(), Toast.LENGTH_SHORT).show();
-                        return;
-                    }
-
-                }
-
-                @Override
-                public void onFailure(Call<Void> call, Throwable t) {
-
-                }
-            });
-        }
-    }
-
-
-    public void addFacilities(){
-        for(int i = 0; i < facilityList.size(); i++){
-            PropertyApi facilitiesApi = Url.getInstance().create(PropertyApi.class);
-            Call<Void> facilitiesCall = facilitiesApi.postPropertyFacilities(Url.token, postId, facilityList.get(i));
-
-            facilitiesCall.enqueue(new Callback<Void>() {
-                @Override
-                public void onResponse(Call<Void> call, Response<Void> response) {
-                    if(!response.isSuccessful()){
-                        Toast.makeText(AddPropertyActivity.this, "error with room"+ response.body(), Toast.LENGTH_SHORT).show();
-                        return;
-                    }
-                }
-
-                @Override
-                public void onFailure(Call<Void> call, Throwable t) {
-
-                }
-            });        }
-    }
+//    public void addRooms(){
+//
+//        for(int i = 0; i < roomList.size(); i++){
+//            PropertyApi addRoomApi = Url.getInstance().create(PropertyApi.class);
+//            Call<Void> addRoomcall = addRoomApi.postPropertyRoom(Url.token, postId, roomList.get(i));
+//
+//            addRoomcall.enqueue(new Callback<Void>() {
+//                @Override
+//                public void onResponse(Call<Void> call, Response<Void> response) {
+//                    if(!response.isSuccessful()){
+//                        Toast.makeText(AddPropertyActivity.this, "error with room"+ response.body(), Toast.LENGTH_SHORT).show();
+//                        return;
+//                    }
+//
+//                }
+//
+//                @Override
+//                public void onFailure(Call<Void> call, Throwable t) {
+//
+//                }
+//            });
+//        }
+//    }
+//
+//
+//    public void addFacilities(){
+//        for(int i = 0; i < facilityList.size(); i++){
+//            PropertyApi facilitiesApi = Url.getInstance().create(PropertyApi.class);
+//            Call<Void> facilitiesCall = facilitiesApi.postPropertyFacilities(Url.token, postId, facilityList.get(i));
+//
+//            facilitiesCall.enqueue(new Callback<Void>() {
+//                @Override
+//                public void onResponse(Call<Void> call, Response<Void> response) {
+//                    if(!response.isSuccessful()){
+//                        Toast.makeText(AddPropertyActivity.this, "error with room"+ response.body(), Toast.LENGTH_SHORT).show();
+//                        return;
+//                    }
+//                }
+//
+//                @Override
+//                public void onFailure(Call<Void> call, Throwable t) {
+//
+//                }
+//            });        }
+//    }
 
 }

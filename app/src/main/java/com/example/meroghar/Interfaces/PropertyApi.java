@@ -28,12 +28,12 @@ public interface PropertyApi {
     @POST("/upload")
     Call<ImageResponse> uploadImage(@Part MultipartBody.Part propertyImage);
 
-    @POST("/properties/{pid}/rooms")
-    Call<Void> postPropertyRoom(@Header("Authorization") String token, @Path("pid") String pid, @Body Room room);
-
-
-    @POST("/properties/{pid}/facilities")
-    Call<Void> postPropertyFacilities(@Header("Authorization") String token, @Path("pid") String pid, @Body Facility facility);
+//    @POST("/properties/{id}/rooms")
+//    Call<Void> postPropertyRoom(@Header("Authorization") String token, @Path("id") String id, @Body Room room);
+//
+//
+//    @POST("/properties/{id}/facilities")
+//    Call<Void> postPropertyFacilities(@Header("Authorization") String token, @Path("id") String id, @Body Facility facility);
 
 //    @GET("/properties")
 //    Call<List<Property>> property
