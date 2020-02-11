@@ -16,7 +16,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".DisplayPropertyActivity"></activity>
+        <activity android:name=".UpdatePropertyActivity"></activity>
+        <activity
+            android:name=".DisplayPropertyActivity"
+            android:parentActivityName=".DashboardActivity" />
         <activity
             android:name=".ProfileEditActivity"
             android:parentActivityName=".DashboardActivity" />

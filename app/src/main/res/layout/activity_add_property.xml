@@ -170,7 +170,6 @@ a
            <CheckBox
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
-               android:layout_margin="5dp"
                android:text="Free Internet"
                android:textColor="#B8B8B8"
                android:id="@+id/checkInternet"
@@ -268,6 +267,16 @@ a
            android:textStyle="bold"
            android:layout_marginHorizontal="5dp"
            android:layout_marginTop="5dp"/>
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:id="@+id/tvBedroom"
+           android:text="Bedroom"
+           android:textSize="15sp"
+           android:textStyle="bold"
+           android:textColor="@color/colorAddProperty"
+           android:layout_marginHorizontal="5dp"
+           android:layout_marginTop="5dp"/>
 
       <EditText
           android:id="@+id/bedRoom"
@@ -282,6 +291,16 @@ a
           android:layout_margin="5dp">
 
       </EditText>
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:id="@+id/tvKitchen"
+           android:text="Kitchen"
+           android:textSize="15sp"
+           android:textStyle="bold"
+           android:textColor="@color/colorAddProperty"
+           android:layout_marginHorizontal="5dp"
+           android:layout_marginTop="5dp"/>
        <EditText
            android:id="@+id/Kitchen"
            android:layout_width="match_parent"
@@ -289,10 +308,21 @@ a
            android:layout_marginStart="15dp"
            android:layout_marginEnd="15dp"
            android:background="@drawable/rounded_textinput"
-           android:hint="No. of Bed Rooms"
+           android:hint="No. of Kitchen Rooms"
            android:padding="10dp"
            android:textSize="15sp"
            android:layout_margin="5dp"/>
+
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:id="@+id/tvLivingroom"
+           android:text="Living Room"
+           android:textSize="15sp"
+           android:textStyle="bold"
+           android:textColor="@color/colorAddProperty"
+           android:layout_marginHorizontal="5dp"
+           android:layout_marginTop="5dp"/>
        <EditText
            android:id="@+id/livingRoom"
            android:layout_width="match_parent"
@@ -304,6 +334,17 @@ a
            android:padding="10dp"
            android:textSize="15sp"
            android:layout_margin="5dp"/>
+
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:id="@+id/tvBathroom"
+           android:text="Bathroom"
+           android:textSize="15sp"
+           android:textStyle="bold"
+           android:textColor="@color/colorAddProperty"
+           android:layout_marginHorizontal="5dp"
+           android:layout_marginTop="5dp"/>
        <EditText
            android:id="@+id/bathroom"
            android:layout_width="match_parent"

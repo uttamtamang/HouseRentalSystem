@@ -141,9 +141,15 @@ public class AddPropertyActivity extends AppCompatActivity {
 
 
     private void AddMyProperty() {
+
+        saveImage();
+
+
+
+        Toast.makeText(AddPropertyActivity.this, "Property Added Successfully", Toast.LENGTH_SHORT).show();
+
         Intent intent = new Intent(AddPropertyActivity.this, DashboardActivity.class);
         startActivity(intent);
-        Toast.makeText(AddPropertyActivity.this, "Property Added Successfully", Toast.LENGTH_SHORT).show();
     }
 
     private void saveImage(){
@@ -170,4 +176,5 @@ public class AddPropertyActivity extends AppCompatActivity {
         }
 
     }
+
 }

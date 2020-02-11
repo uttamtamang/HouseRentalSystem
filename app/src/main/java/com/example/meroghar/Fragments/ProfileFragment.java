@@ -16,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.meroghar.AddPropertyActivity;
+import com.example.meroghar.DisplayPropertyActivity;
 import com.example.meroghar.Interfaces.UserApi;
 import com.example.meroghar.LoginActivity;
 import com.example.meroghar.Models.User;
@@ -88,6 +89,13 @@ public class ProfileFragment extends Fragment {
                     startActivity(intent);
                 }
 
+            }
+        });
+        btnViewProperty.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), DisplayPropertyActivity.class);
+                startActivity(intent);
             }
         });
 
