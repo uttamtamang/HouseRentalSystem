@@ -17,6 +17,17 @@ public class Property {
     private List<Facility> facilityList;
     private List<Room> roomList;
 
+    public Property(String image, String title, String owner, String address, String category, String purpose, String description, String price) {
+        this.image = image;
+        this.title = title;
+        this.owner = owner;
+        this.address = address;
+        this.category = category;
+        this.purpose = purpose;
+        this.description = description;
+        this.price = price;
+    }
+
     //CONSTRUCTIOR FOR CRUD
     public Property(String _id, String image, String title, String owner, String address,
                     String category, String purpose, String description, String price, List<Facility> facilityList,
