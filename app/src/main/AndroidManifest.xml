@@ -16,9 +16,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ProfileEditActivity" android:parentActivityName=".DashboardActivity"></activity>
-        <activity android:name=".AddPropertyActivity" android:parentActivityName=".DashboardActivity"></activity>
-        <activity android:name=".DashboardActivity"></activity>
+        <activity android:name=".DisplayPropertyActivity"></activity>
+        <activity
+            android:name=".ProfileEditActivity"
+            android:parentActivityName=".DashboardActivity" />
+        <activity
+            android:name=".AddPropertyActivity"
+            android:parentActivityName=".DashboardActivity" />
+        <activity android:name=".DashboardActivity" />
         <activity android:name=".MeroGharSplashScreenActivity" />
         <activity android:name=".RegistrationActivity" />
         <activity android:name=".LoginActivity">

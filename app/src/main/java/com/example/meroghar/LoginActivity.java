@@ -49,10 +49,6 @@ public class LoginActivity extends AppCompatActivity {
     private CheckBox cbRem;
     SharedPreferences rememberMe;
 
-//    @BindView(R.id.root)
-//    ViewGroup root;
-//    @BindView(R.id.userEmail)
-//    BlurView blur_email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,19 +60,10 @@ public class LoginActivity extends AppCompatActivity {
         getSupportActionBar().hide();
 
 
-//Notifier
         notificationManagerCompat = NotificationManagerCompat.from(this);
         CreateChannel channel = new CreateChannel(this);
         channel.createChannel();
 
-        //THIS WILL MAKE YOUR STATUS BAR TRANSPARENT
-//        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.LOLLIPOP){
-//            getWindow().setFlags(
-//                    WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
-//                    WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
-//            );
-//            getWindow().setStatusBarColor(Color.TRANSPARENT);
-//        }
 
         rememberMe = getSharedPreferences("User", Context.MODE_PRIVATE);
 

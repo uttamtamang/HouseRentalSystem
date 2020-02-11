@@ -13,5 +13,6 @@
     <color name="colorYellow">#E6AF2E</color>
     <color name="colortext">#B8B8B8</color>
     <color name="colorAddProperty">#2AC383</color>
+    <color name="colorDarkBlue">#566573</color>
 
 </resources>

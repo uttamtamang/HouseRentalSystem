@@ -16,7 +16,7 @@
 a
        <ImageView
            android:layout_width="match_parent"
-           android:layout_height="250dp"
+           android:layout_height="400dp"
            android:id="@+id/propertyImage"
            android:src="@drawable/logo"
            android:layout_gravity="center"
@@ -133,7 +133,12 @@ a
                android:text="Drinking Water"
                android:textColor="#B8B8B8"
                android:id="@+id/checkDrinkingWater"
-               android:textSize="12sp"/>
+               android:textSize="12sp"
+               android:layout_columnWeight="1"
+               android:layout_row="0"
+               android:layout_column="0"
+               android:layout_gravity="fill"
+               android:layout_rowWeight="1"/>
 
            <CheckBox
                android:layout_width="wrap_content"
@@ -142,7 +147,12 @@ a
                android:text="Boring Water"
                android:textColor="#B8B8B8"
                android:id="@+id/checkBoringWater"
-               android:textSize="12sp"/>
+               android:textSize="12sp"
+               android:layout_columnWeight="1"
+               android:layout_row="0"
+               android:layout_column="1"
+               android:layout_gravity="fill"
+               android:layout_rowWeight="1"/>
 
            <CheckBox
                android:layout_width="wrap_content"
@@ -151,7 +161,12 @@ a
                android:text="Electrivity"
                android:textColor="#B8B8B8"
                android:id="@+id/checkElectricity"
-               android:textSize="12sp"/>
+               android:textSize="12sp"
+               android:layout_columnWeight="1"
+               android:layout_row="0"
+               android:layout_column="2"
+               android:layout_gravity="fill"
+               android:layout_rowWeight="1"/>
 
            <CheckBox
                android:layout_width="wrap_content"
@@ -160,7 +175,12 @@ a
                android:text="Free Internet"
                android:textColor="#B8B8B8"
                android:id="@+id/checkInternet"
-               android:textSize="12sp"/>
+               android:textSize="12sp"
+               android:layout_columnWeight="1"
+               android:layout_row="1"
+               android:layout_column="0"
+               android:layout_gravity="fill"
+               android:layout_rowWeight="1"/>
 
            <CheckBox
                android:layout_width="wrap_content"
@@ -168,7 +188,12 @@ a
                android:layout_margin="5dp"
                android:text="Bike Parking"
                android:id="@+id/checkBikeParking"
-               android:textColor="#B8B8B8" />
+               android:textColor="#B8B8B8"
+               android:layout_columnWeight="1"
+               android:layout_row="1"
+               android:layout_column="1"
+               android:layout_gravity="fill"
+               android:layout_rowWeight="1"/>
            <CheckBox
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
@@ -176,7 +201,12 @@ a
                android:text="Car Parking"
                android:textColor="#B8B8B8"
                android:id="@+id/checkCarParking"
-               android:textSize="12sp"/>
+               android:textSize="12sp"
+               android:layout_columnWeight="1"
+               android:layout_row="1"
+               android:layout_column="2"
+               android:layout_gravity="fill"
+               android:layout_rowWeight="1"/>
            <CheckBox
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
@@ -184,7 +214,11 @@ a
                android:text="CableTV Sharing"
                android:textColor="#B8B8B8"
                android:id="@+id/checkCableSharing"
-               android:textSize="12sp"/>
+               android:textSize="12sp" android:layout_columnWeight="1"
+               android:layout_row="2"
+               android:layout_column="0"
+               android:layout_gravity="fill"
+               android:layout_rowWeight="1"/>
 
            <CheckBox
                android:layout_width="wrap_content"
@@ -193,7 +227,12 @@ a
                android:text="Laundry"
                android:textColor="#B8B8B8"
                android:id="@+id/checkLaundry"
-               android:textSize="12sp"/>
+               android:textSize="12sp"
+               android:layout_columnWeight="1"
+               android:layout_row="2"
+               android:layout_column="1"
+               android:layout_gravity="fill"
+               android:layout_rowWeight="1"/>
            <CheckBox
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
@@ -201,7 +240,12 @@ a
                android:text="Earthquake proof"
                android:textColor="#B8B8B8"
                android:id="@+id/checkEarthquakeProof"
-               android:textSize="12sp"/>
+               android:textSize="12sp"
+               android:layout_columnWeight="1"
+               android:layout_row="2"
+               android:layout_column="2"
+               android:layout_gravity="fill"
+               android:layout_rowWeight="1"/>
 
        </GridLayout>
 

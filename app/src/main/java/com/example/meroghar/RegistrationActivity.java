@@ -92,15 +92,6 @@ public class RegistrationActivity extends AppCompatActivity {
             }
         });
 
-//        backLogin.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(RegistrationActivity.this, LoginActivity.class);
-//                startActivity(intent);
-//            }
-//        });
-
-
     }
 
     private boolean validate(){

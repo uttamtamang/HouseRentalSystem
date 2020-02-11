@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DisplayPropertyActivity"
+    android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp"
+           >
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:id="@+id/viewPropertyImage"
+                android:background="@drawable/logo2">
+            </ImageView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/viewPropertyTitle"
+                android:text="Title of the property"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorAddProperty"
+                android:paddingTop="5dp"
+                >
+
+            </TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/viewPropertyAddress"
+                android:text="Adress of the property"
+                android:textSize="20sp"
+                android:textColor="@color/colortext"
+                android:drawableLeft="@drawable/adress"
+                android:drawablePadding="8dp"
+                android:paddingTop="5dp">
+            </TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/viewPropertyCategory"
+                android:text="Category of the property"
+                android:textSize="20sp"
+                android:textColor="@color/colortext"
+                android:drawableLeft="@drawable/category"
+                android:drawablePadding="8dp"
+                android:paddingTop="5dp">
+            </TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/viewPropertyPurpose"
+                android:text="Purpose of the property"
+                android:textSize="20sp"
+                android:textColor="@color/colortext"
+                android:drawableLeft="@drawable/purpose"
+                android:drawablePadding="8dp"
+                android:paddingTop="5dp">
+            </TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/viewPropertyPrice"
+                android:text="Price of the property"
+                android:textSize="20sp"
+                android:textColor="@color/colortext"
+                android:drawableLeft="@drawable/ic_attach_money_black_24dp"
+                android:drawablePadding="8dp"
+                android:paddingTop="5dp">
+            </TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/viewPropertyDescription"
+                android:text="Description of the property"
+                android:textSize="20sp"
+                android:textColor="@color/colortext"
+                android:lines="3"
+                android:padding="5dp">
+            </TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Facilities of the property"
+                android:textSize="25sp"
+                android:textColor="@color/colorAddProperty"
+                android:padding="5dp"
+                android:textStyle="bold"
+                >
+            </TextView>
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/recycleFacilities"
+                android:paddingTop="10dp">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Rooms of the property"
+                android:textSize="25sp"
+                android:textColor="@color/colorAddProperty"
+                android:padding="5dp"
+                android:textStyle="bold"
+                >
+            </TextView>
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/recycleRooms"
+                android:paddingTop="10dp">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Owner Detils"
+                android:textSize="25sp"
+                android:textColor="@color/colorAddProperty"
+                android:padding="5dp"
+                android:textStyle="bold"
+                >
+            </TextView>
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/recycleDetailOwner"
+                android:paddingTop="10dp">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+        </LinearLayout>
+
+</ScrollView>

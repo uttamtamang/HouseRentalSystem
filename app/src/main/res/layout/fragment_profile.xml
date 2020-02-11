@@ -4,143 +4,172 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Fragments.ProfileFragment"
-    android:background="@drawable/background">
-
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:layout_width="125dp"
-        android:layout_height="125dp"
-        android:src="@drawable/userimg"
-        android:id="@+id/myuserProfilePic"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="25dp"
-        />
-<!--    <ImageView-->
-<!--        android:layout_width="125dp"-->
-<!--        android:layout_height="125dp"-->
-<!--        android:src="@drawable/userimg"-->
-<!--        android:id="@+id/myuserProfilePic"-->
-<!--        android:layout_centerHorizontal="true"-->
-<!--        android:layout_marginTop="25dp"-->
-<!--        />-->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/userName"
-        android:text="Hello this is user"
-        android:layout_below="@+id/myuserProfilePic"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="5dp"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:textColor="#B8B8B8"/>
+   >
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/placeIcon"
-        android:layout_below="@+id/userName"
-        android:layout_toStartOf="@+id/userAddress"
-        android:src="@drawable/ic_place_black_24dp"
-        android:layout_marginTop="14px"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/userAddress"
-        android:text="Kathmandu, Nepal"
-        android:layout_below="@+id/userName"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="5dp"
-        android:textSize="15sp"
-        android:textColor="#B8B8B8"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/background"
+        android:scaleType="centerCrop"
         />
 
-
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/linearlayout"
-        android:orientation="vertical"
-        android:layout_below="@+id/userAddress"
-        android:layout_marginTop="75dp">
-
-        <GridLayout
+        android:layout_height="wrap_content">
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="15px"
-            android:alignmentMode="alignMargins"
-            android:columnCount="2"
-            android:columnOrderPreserved="false"
-            android:rowCount="2">
+            android:layout_height="wrap_content">
 
-            <Button
-                android:id="@+id/btnEditProfile"
-                android:layout_width="190dp"
-                android:layout_height="70dp"
-                android:layout_marginHorizontal="10dp"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/button_view_profile"
-                android:drawableTop="@drawable/resume"
-                android:layout_marginStart="5dp"
-                android:padding="10dp"
-                android:text="Edit Profile"
-                android:textColor="#fff"
-                android:textSize="15sp"
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="125dp"
+                android:layout_height="125dp"
+                android:src="@drawable/userimg"
+                android:id="@+id/myuserProfilePic"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="25dp"
                 />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/userName"
+                android:text="Hello this is user"
+                android:layout_below="@+id/myuserProfilePic"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#B8B8B8"/>
 
-            <Button
-                android:id="@+id/btnAddPropertyfromProfile"
-                android:layout_width="190dp"
-                android:layout_height="70dp"
-                android:layout_marginHorizontal="10dp"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/button_add_property"
-                android:drawableTop="@drawable/add"
-                android:layout_marginStart="10dp"
-                android:padding="10dp"
-                android:text="Add property"
-                android:textColor="#fff"
-                android:textSize="15sp" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/placeIcon"
+                android:layout_below="@+id/userName"
+                android:layout_toStartOf="@+id/userAddress"
+                android:src="@drawable/ic_place_black_24dp"
+                android:layout_marginTop="14px"/>
 
-            <Button
-                android:id="@+id/btnViewProperty"
-                android:layout_width="190dp"
-                android:layout_height="70dp"
-                android:layout_marginHorizontal="10dp"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/button_view_property"
-                android:drawableTop="@drawable/file"
-                android:layout_marginStart="5dp"
-                android:padding="10dp"
-                android:text="View property"
-                android:textColor="#fff"
-                android:textSize="15sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/userAddress"
+                android:text="Kathmandu, Nepal"
+                android:layout_below="@+id/userName"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:textSize="15sp"
+                android:textColor="#B8B8B8"
+                />
 
-            <Button
-                android:id="@+id/btnLogout"
-                android:layout_width="190dp"
-                android:layout_height="70dp"
-                android:layout_marginHorizontal="10dp"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/button_log_out"
-                android:drawableTop="@drawable/logout"
-                android:layout_marginStart="10dp"
-                android:padding="10dp"
-                android:text="LOGOUT"
-                android:textColor="#fff"
-                android:textSize="15sp" />
+            <LinearLayout
+                android:layout_below="@+id/userAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/linearlayout"
+                android:orientation="vertical"
+                android:layout_marginTop="75dp">
+
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="15px"
+                    android:alignmentMode="alignMargins"
+                    android:columnCount="2"
+                    android:columnOrderPreserved="false"
+                    android:rowCount="2">
+
+<!--                    <Button-->
+<!--                        android:id="@+id/btnEditProfile"-->
+<!--                        android:layout_width="190dp"-->
+<!--                        android:layout_height="70dp"-->
+<!--                        android:layout_marginHorizontal="10dp"-->
+<!--                        android:layout_marginTop="10dp"-->
+<!--                        android:background="@drawable/button_view_profile"-->
+<!--                        android:drawableTop="@drawable/resume"-->
+<!--                        android:layout_marginStart="5dp"-->
+<!--                        android:padding="10dp"-->
+<!--                        android:text="Edit Profile"-->
+<!--                        android:textColor="#fff"-->
+<!--                        android:textSize="15sp"-->
+<!--                        />-->
+
+                    <Button
+                        android:id="@+id/btnEditProfile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/button_view_profile"
+                        android:drawableTop="@drawable/resume"
+                        android:padding="10dp"
+                        android:text="Edit Profile"
+                        android:textColor="#fff"
+                        android:textSize="15sp"
+                        android:layout_column="0"
+                        android:layout_row="0"
+                        android:layout_gravity="fill"
+                        android:layout_columnWeight="1"
+                        android:layout_rowWeight="1"
+                        />
 
 
-        </GridLayout>
+                    <Button
+                        android:id="@+id/btnAddPropertyfromProfile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/button_add_property"
+                        android:drawableTop="@drawable/add"
+                        android:layout_marginStart="10dp"
+                        android:padding="10dp"
+                        android:text="Add property"
+                        android:textColor="#fff"
+                        android:textSize="15sp"
+                        android:layout_column="1"
+                        android:layout_row="0"
+                        android:layout_gravity="fill"
+                        android:layout_columnWeight="1"
+                        android:layout_rowWeight="1"/>
+
+                    <Button
+                        android:id="@+id/btnViewProperty"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/button_view_property"
+                        android:drawableTop="@drawable/file"
+                        android:padding="10dp"
+                        android:layout_marginTop="10dp"
+                        android:text="View property"
+                        android:textColor="#fff"
+                        android:textSize="15sp"
+                        android:layout_column="0"
+                        android:layout_row="1"
+                        android:layout_gravity="fill"
+                        android:layout_columnWeight="1"
+                        android:layout_rowWeight="1"/>
+
+                    <Button
+                        android:id="@+id/btnLogout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/button_log_out"
+                        android:drawableTop="@drawable/logout"
+                        android:layout_marginStart="10dp"
+                        android:padding="10dp"
+                        android:text="LOGOUT"
+                        android:textColor="#fff"
+                        android:textSize="15sp"
+                        android:layout_column="1"
+                        android:layout_row="1"
+                        android:layout_gravity="fill"
+                        android:layout_columnWeight="1"
+                        android:layout_rowWeight="1"/>
 
 
+                </GridLayout>
+            </LinearLayout>
 
 
-
-    </LinearLayout>
-
-
+        </RelativeLayout>
+    </ScrollView>
 
 </RelativeLayout>
