@@ -9,10 +9,13 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.meroghar.Adapters.PropertyAdapter;
@@ -22,6 +25,7 @@ import com.example.meroghar.Models.Property;
 import com.example.meroghar.R;
 import com.example.meroghar.URL.Url;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -36,6 +40,7 @@ public class PropertiesFragment extends Fragment {
     List<Property> propertyList;
    // public static List<>
 
+    EditText btnSearchByAddress;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -44,9 +49,28 @@ public class PropertiesFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_properties, container, false);
 
         propertyRecyclerView = v.findViewById(R.id.propertyRecyclerView1);
+        btnSearchByAddress = v.findViewById(R.id.etPropertySearch);
 
         loadProperties();
+        
+        btnSearchByAddress.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                
+            }
 
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                filter(s.toString());
+            }
+        });
+
+        
         return v;
 
     }
@@ -74,5 +98,16 @@ public class PropertiesFragment extends Fragment {
                 Toast.makeText(getContext(), "error" + t.getLocalizedMessage(), Toast.LENGTH_LONG).show();
             }
         });
+    }
+    
+    //Search Address 
+    private void filter(String text){
+        ArrayList<Property> filteredList = new ArrayList<>();
+        for(Property item: propertyList){
+            if( item.getAddress().toLowerCase().contains(text.toLowerCase())){
+                filteredList.add(item);
+            }
+        }
+        adapter.FilterAddress(filteredList);
     }
 }

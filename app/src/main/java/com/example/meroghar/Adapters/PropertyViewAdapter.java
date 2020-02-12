@@ -20,6 +20,7 @@ import com.example.meroghar.strictmode.StrictModeClass;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -66,10 +67,15 @@ public class PropertyViewAdapter extends RecyclerView.Adapter<PropertyViewAdapte
         return properties.size();
     }
 
+    public void FilterAddress(ArrayList<Property> filteredList){
+        properties = filteredList;
+        notifyDataSetChanged();
+    }
+
     public class PropertyViewHolder extends RecyclerView.ViewHolder{
         TextView propertyTitle, propertyPrice, propertyLocation;
         ImageView imgProperty;
-        CircleImageView idLove;
+        ImageView idLove;
 
         public PropertyViewHolder(@NonNull View itemView, final Context context) {
             super(itemView);

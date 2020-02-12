@@ -7,6 +7,9 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
+    //sensor permission
+    <uses-permission android:name="android.permission.VIBRATE"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -16,7 +19,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".UpdatePropertyActivity"></activity>
+        <activity android:name=".MyPropertyActivity" android:parentActivityName=".DashboardActivity"></activity>
+        <activity android:name=".UpdatePropertyActivity" android:parentActivityName=".DashboardActivity"/>
         <activity
             android:name=".DisplayPropertyActivity"
             android:parentActivityName=".DashboardActivity" />

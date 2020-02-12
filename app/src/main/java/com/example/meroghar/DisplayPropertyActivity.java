@@ -48,5 +48,6 @@ public class DisplayPropertyActivity extends AppCompatActivity {
 
         propertyImage= findViewById(R.id.viewPropertyImage);
 
+
     }
 }

@@ -5,10 +5,31 @@
     android:layout_height="wrap_content"
     tools:context=".Fragments.PropertiesFragment">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/idLinear"
+        android:orientation="vertical"
+        >
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/etPropertySearch"
+            android:layout_marginVertical="12dp"
+            android:layout_marginHorizontal="10dp"
+            android:hint="Search by address..."
+            android:background="@drawable/search_border">
+
+        </EditText>
+
+    </LinearLayout>
+
             <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/propertyRecyclerView1">
+                android:id="@+id/propertyRecyclerView1"
+                android:layout_below="@id/idLinear">
 
             </androidx.recyclerview.widget.RecyclerView>
 

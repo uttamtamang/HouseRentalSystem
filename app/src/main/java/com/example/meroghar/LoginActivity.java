@@ -15,6 +15,7 @@ import android.graphics.drawable.Drawable;
 import android.net.ConnectivityManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
@@ -46,9 +47,11 @@ public class LoginActivity extends AppCompatActivity {
     TextView registerNow;
     NotificationManagerCompat notificationManagerCompat;
 
+
     private CheckBox cbRem;
     SharedPreferences rememberMe;
 
+    Vibrator vibrator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +78,8 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin= findViewById(R.id.btnLogin);
         registerNow = findViewById(R.id.linkRegistration);
         btnSignup= findViewById(R.id.btnSignup);
+
+        vibrator=(Vibrator)getSystemService(VIBRATOR_SERVICE);
 
         if( rememberMe.getString("email", "").isEmpty()){
             cbRem.setChecked(false);
@@ -135,7 +140,8 @@ public class LoginActivity extends AppCompatActivity {
                     rememberMe.edit().clear().commit();
                 }
                 if(!response.isSuccessful()){
-                    Toast.makeText(LoginActivity.this, "Login Error", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "Either Username or Password is incorrect", Toast.LENGTH_SHORT).show();
+                    vibrator.vibrate(50);
                     return;
                 }
                 else{

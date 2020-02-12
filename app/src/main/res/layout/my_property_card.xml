@@ -6,14 +6,15 @@
     android:layout_height="wrap_content"
     android:background="@drawable/post_bg"
     android:layout_margin="10dp"
-    android:padding="15dp">
+    android:padding="5dp">
 
     <ImageView
         android:id="@+id/imgProperty"
         android:layout_width="match_parent"
-        android:layout_height="175dp"
+        android:layout_height="225dp"
         android:padding="5dp"
         android:src="@drawable/logo2"
+        android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -50,5 +51,20 @@
         app:layout_constraintTop_toBottomOf="@id/propertyPrice"
 
         />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/propertyLocation"
+        app:layout_constraintStart_toEndOf="parent"
+        android:id="@+id/btnUpdateThis"
+        android:text="Update"
+        android:textColor="#fff"
+        android:background="@color/colorButton"
+        android:textSize="18sp">
+
+    </Button>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

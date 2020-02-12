@@ -20,6 +20,7 @@ import com.example.meroghar.DisplayPropertyActivity;
 import com.example.meroghar.Interfaces.UserApi;
 import com.example.meroghar.LoginActivity;
 import com.example.meroghar.Models.User;
+import com.example.meroghar.MyPropertyActivity;
 import com.example.meroghar.ProfileEditActivity;
 import com.example.meroghar.R;
 import com.example.meroghar.URL.Url;
@@ -94,7 +95,7 @@ public class ProfileFragment extends Fragment {
         btnViewProperty.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), DisplayPropertyActivity.class);
+                Intent intent = new Intent(getActivity(), MyPropertyActivity.class);
                 startActivity(intent);
             }
         });

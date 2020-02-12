@@ -19,38 +19,34 @@ import com.example.meroghar.strictmode.StrictModeClass;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.List;
 
-import de.hdodenhof.circleimageview.CircleImageView;
+public class MyPropertyViewAdapter extends RecyclerView.Adapter<MyPropertyViewAdapter.MyPropertyViewHolder>  {
 
-public class PropertyAdapter extends RecyclerView.Adapter<PropertyAdapter.PropertyViewHolder> {
-
-    private List<Property> properties;
+    private List<Property> myProperties;
     private Context context;
 
-    public PropertyAdapter(List<Property> properties, Context context) {
-        this.properties = properties;
+    public MyPropertyViewAdapter(List<Property> myProperties, Context context) {
+        this.myProperties = myProperties;
         this.context = context;
     }
 
     @NonNull
     @Override
-    public PropertyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
+    public MyPropertyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                        .inflate(R.layout.property_card, parent, false);
+                .inflate(R.layout.my_property_card, parent, false);
 
-        return new PropertyViewHolder(view, context);
+        return new MyPropertyViewAdapter.MyPropertyViewHolder(view, context);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull PropertyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MyPropertyViewHolder holder, int position) {
+
         StrictModeClass.StrictMode();
 
-        Property property = properties.get(position);
+        Property property = myProperties.get(position);
         String path = Url.imagePath + property.getImage();
         try{
             URL url = new URL(path);
@@ -66,27 +62,19 @@ public class PropertyAdapter extends RecyclerView.Adapter<PropertyAdapter.Proper
 
     @Override
     public int getItemCount() {
-        return properties.size();
+        return 0;
     }
 
-    public void FilterAddress(ArrayList<Property> filteredList){
-        properties = filteredList;
-        notifyDataSetChanged();
-    }
-
-    public class PropertyViewHolder extends RecyclerView.ViewHolder {
-
+    public class MyPropertyViewHolder extends RecyclerView.ViewHolder {
         TextView propertyTitle, propertyPrice, propertyLocation;
         ImageView imgProperty;
-        ImageView idLove;
 
-        public PropertyViewHolder(@NonNull View itemView, final Context context) {
+        public MyPropertyViewHolder(@NonNull View itemView, final Context context) {
             super(itemView);
             propertyTitle = itemView.findViewById(R.id.propertyTitle);
             propertyPrice = itemView.findViewById(R.id.propertyPrice);
             propertyLocation = itemView.findViewById(R.id.propertyLocation);
             imgProperty = itemView.findViewById(R.id.imgProperty);
-            idLove = itemView.findViewById(R.id.idLove);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
