@@ -19,18 +19,17 @@ import com.example.meroghar.strictmode.StrictModeClass;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class PropertyAdapter extends RecyclerView.Adapter<PropertyAdapter.PropertyViewHolder> {
+public class PropertyViewAdapter extends RecyclerView.Adapter<PropertyViewAdapter.PropertyViewHolder>{
 
     private List<Property> properties;
     private Context context;
 
-    public PropertyAdapter(List<Property> properties, Context context) {
+    public PropertyViewAdapter(List<Property> properties, Context context) {
         this.properties = properties;
         this.context = context;
     }
@@ -38,9 +37,8 @@ public class PropertyAdapter extends RecyclerView.Adapter<PropertyAdapter.Proper
     @NonNull
     @Override
     public PropertyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
         View view = LayoutInflater.from(parent.getContext())
-                        .inflate(R.layout.property_card, parent, false);
+                .inflate(R.layout.property_card, parent, false);
 
         return new PropertyViewHolder(view, context);
     }
@@ -68,8 +66,7 @@ public class PropertyAdapter extends RecyclerView.Adapter<PropertyAdapter.Proper
         return properties.size();
     }
 
-    public class PropertyViewHolder extends RecyclerView.ViewHolder {
-
+    public class PropertyViewHolder extends RecyclerView.ViewHolder{
         TextView propertyTitle, propertyPrice, propertyLocation;
         ImageView imgProperty;
         CircleImageView idLove;

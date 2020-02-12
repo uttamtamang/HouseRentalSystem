@@ -47,6 +47,7 @@ public class AddPropertyActivity extends AppCompatActivity {
 
     EditText etPropertyTitle, etPropertyDescription, etPropertyPrice, etPropertyAddress,
             etBedroom, etKitchenroom, etLivingRoom, etBathroom;
+    EditText etFacility1, etFacility2,etFacility3,etFacility4;
 
     TextView tvBedroom, tvKitchen, tvLivingroom, tvBathroom;
     ImageView propertyImage;
@@ -54,8 +55,9 @@ public class AddPropertyActivity extends AppCompatActivity {
     private String image="";
     private String postId;
     Spinner categorySpinner, purposeSpinner;
-    CheckBox checkBox1, checkBox2, checkBox3, checkBox4,
-            checkBox5, checkBox6, checkBox7, checkBox8, checkBox9;
+
+//    CheckBox checkBox1, checkBox2, checkBox3, checkBox4,
+//            checkBox5, checkBox6, checkBox7, checkBox8, checkBox9;
 
     List<Facility> facilityList = new ArrayList<>();
     List<Room> roomList= new ArrayList<>();
@@ -73,31 +75,40 @@ public class AddPropertyActivity extends AppCompatActivity {
         etPropertyDescription = findViewById(R.id.propertyDescription);
         etPropertyPrice = findViewById(R.id.propertyPrice);
         etPropertyAddress = findViewById(R.id.propertyAddress);
+
         etBedroom= findViewById(R.id.bedRoom);
         etKitchenroom = findViewById(R.id.Kitchen);
         etLivingRoom = findViewById(R.id.livingRoom);
         etBathroom = findViewById(R.id.bathroom);
 
+        //updated facility
+        etFacility1= findViewById(R.id.facility1);
+        etFacility2= findViewById(R.id.facility2);
+        etFacility3= findViewById(R.id.facility3);
+        etFacility4= findViewById(R.id.facility4);
+
+        //Extracting room name from Textview
         tvBathroom = findViewById(R.id.tvBathroom);
         tvKitchen = findViewById(R.id.tvKitchen);
         tvLivingroom = findViewById(R.id.tvLivingroom);
         tvBedroom = findViewById(R.id.tvBedroom);
+
         //Image Initilization
         propertyImage= findViewById(R.id.propertyImage);
 
         //Checkbox initilization
-        checkBox1 = findViewById(R.id.checkDrinkingWater);
-        checkBox2 = findViewById(R.id.checkBoringWater);
-        checkBox3 = findViewById(R.id.checkElectricity);
-        checkBox4 = findViewById(R.id.checkInternet);
-        checkBox5 = findViewById(R.id.checkBikeParking);
-        checkBox6 = findViewById(R.id.checkCarParking);
-        checkBox7 = findViewById(R.id.checkCableSharing);
-        checkBox8 = findViewById(R.id.checkLaundry);
-        checkBox9 = findViewById(R.id.checkEarthquakeProof);
+//        checkBox1 = findViewById(R.id.checkDrinkingWater);
+//        checkBox2 = findViewById(R.id.checkBoringWater);
+//        checkBox3 = findViewById(R.id.checkElectricity);
+//        checkBox4 = findViewById(R.id.checkInternet);
+//        checkBox5 = findViewById(R.id.checkBikeParking);
+//        checkBox6 = findViewById(R.id.checkCarParking);
+//        checkBox7 = findViewById(R.id.checkCableSharing);
+//        checkBox8 = findViewById(R.id.checkLaundry);
+//        checkBox9 = findViewById(R.id.checkEarthquakeProof);
 
         //Setting Values in spinner
-        categorySpinner = findViewById(R.id.propertyPurposeSpinner);
+        categorySpinner = findViewById(R.id.propertyCategorySpinner);
         purposeSpinner = findViewById(R.id.propertyPurposeSpinner);
 
         //Button initilization
@@ -161,16 +172,24 @@ public class AddPropertyActivity extends AppCompatActivity {
 
         saveImage();
 
-        setFacilityList();
-        setroom();
+//        setFacilityList();
+//        setroom();
+
+//        Property property = new Property(image ,etPropertyTitle.getText().toString(), ProfileFragment.globalUser.get_id(),
+//                                            etPropertyAddress.getText().toString(),
+//                                            categorySpinner.getSelectedItem().toString(),
+//                                            purposeSpinner.getSelectedItem().toString(),
+//                                            etPropertyDescription.getText().toString(),
+//                                            etPropertyPrice.getText().toString(), facilityList, roomList);
 
         Property property = new Property(image ,etPropertyTitle.getText().toString(), ProfileFragment.globalUser.get_id(),
-                                            etPropertyAddress.getText().toString(),
-                                            categorySpinner.getSelectedItem().toString(),
-                                            purposeSpinner.getSelectedItem().toString(),
-                                            etPropertyDescription.getText().toString(),
-                                            etPropertyPrice.getText().toString(), facilityList,
-                roomList);
+                etPropertyAddress.getText().toString(),
+                categorySpinner.getSelectedItem().toString(),
+                purposeSpinner.getSelectedItem().toString(),
+                etPropertyDescription.getText().toString(),
+                etPropertyPrice.getText().toString(), etFacility1.getText().toString(), etFacility2.getText().toString(),
+                etFacility3.getText().toString(), etFacility4.getText().toString(),etKitchenroom.getText().toString(),
+                etBedroom.getText().toString(),etLivingRoom.getText().toString(),etBathroom.getText().toString());
 
 
         PropertyApi propApi = Url.getInstance().create(PropertyApi.class);
@@ -222,24 +241,27 @@ public class AddPropertyActivity extends AppCompatActivity {
 
     }
 
-    public void setFacilityList(){
-        if(checkBox1.isChecked()) facilityList.add(new Facility(checkBox1.getText().toString()));
-        if(checkBox2.isChecked()) facilityList.add(new Facility(checkBox2.getText().toString()));
-        if(checkBox3.isChecked()) facilityList.add(new Facility(checkBox3.getText().toString()));
-        if(checkBox4.isChecked()) facilityList.add(new Facility(checkBox4.getText().toString()));
-        if(checkBox5.isChecked()) facilityList.add(new Facility(checkBox5.getText().toString()));
-        if(checkBox6.isChecked()) facilityList.add(new Facility(checkBox6.getText().toString()));
-        if(checkBox7.isChecked()) facilityList.add(new Facility(checkBox7.getText().toString()));
-        if(checkBox8.isChecked()) facilityList.add(new Facility(checkBox8.getText().toString()));
-        if(checkBox9.isChecked()) facilityList.add(new Facility(checkBox9.getText().toString()));
-    }
+    //Setting facilities form checkbox
+//    public void setFacilityList(){
+//        if(checkBox1.isChecked()) facilityList.add(new Facility(checkBox1.getText().toString()));
+//        if(checkBox2.isChecked()) facilityList.add(new Facility(checkBox2.getText().toString()));
+//        if(checkBox3.isChecked()) facilityList.add(new Facility(checkBox3.getText().toString()));
+//        if(checkBox4.isChecked()) facilityList.add(new Facility(checkBox4.getText().toString()));
+//        if(checkBox5.isChecked()) facilityList.add(new Facility(checkBox5.getText().toString()));
+//        if(checkBox6.isChecked()) facilityList.add(new Facility(checkBox6.getText().toString()));
+//        if(checkBox7.isChecked()) facilityList.add(new Facility(checkBox7.getText().toString()));
+//        if(checkBox8.isChecked()) facilityList.add(new Facility(checkBox8.getText().toString()));
+//        if(checkBox9.isChecked()) facilityList.add(new Facility(checkBox9.getText().toString()));
+//    }
 
-    public void setroom(){
-        roomList.add(new Room(tvBedroom.getText().toString() ,etBedroom.getText().toString()));
-        roomList.add(new Room(tvBathroom.getText().toString() ,etBathroom.getText().toString()));
-        roomList.add(new Room(tvLivingroom.getText().toString() ,etLivingRoom.getText().toString()));
-        roomList.add(new Room(tvKitchen.getText().toString() ,etKitchenroom.getText().toString()));
-    }
+    //Setting room
+//    public void setroom(){
+//        roomList.add(new Room(tvBedroom.getText().toString() ,etBedroom.getText().toString()));
+//        roomList.add(new Room(tvBathroom.getText().toString() ,etBathroom.getText().toString()));
+//        roomList.add(new Room(tvLivingroom.getText().toString() ,etLivingRoom.getText().toString()));
+//        roomList.add(new Room(tvKitchen.getText().toString() ,etKitchenroom.getText().toString()));
+//    }
+
 
 //    public void addRooms(){
 //

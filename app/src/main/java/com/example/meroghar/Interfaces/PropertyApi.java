@@ -35,7 +35,7 @@ public interface PropertyApi {
 //    @POST("/properties/{id}/facilities")
 //    Call<Void> postPropertyFacilities(@Header("Authorization") String token, @Path("id") String id, @Body Facility facility);
 
-//    @GET("/properties")
-//    Call<List<Property>> property
+    @GET("/properties")
+    Call<List<Property>> getProperty();
 
 }

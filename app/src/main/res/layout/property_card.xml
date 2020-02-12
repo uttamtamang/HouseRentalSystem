@@ -6,13 +6,13 @@
     android:layout_height="wrap_content"
     android:background="@drawable/post_bg"
     android:layout_margin="10dp"
-    android:padding="15dp">
+    android:padding="5dp">
 
     <ImageView
         android:id="@+id/imgProperty"
         android:layout_width="match_parent"
-        android:layout_height="175dp"
-        android:padding="5dp"
+        android:layout_height="200dp"
+        android:scaleType="fitXY"
         android:src="@drawable/logo2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,6 +20,7 @@
         />
 
     <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/idLove"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:src="@drawable/ic_favorite_black_24dp"

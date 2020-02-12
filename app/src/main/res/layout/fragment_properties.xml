@@ -5,20 +5,12 @@
     android:layout_height="wrap_content"
     tools:context=".Fragments.PropertiesFragment">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
             <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="wrap_content"
-                android:layout_height="200dp"
-                android:id="@+id/propertyRecyclerView">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/propertyRecyclerView1">
 
             </androidx.recyclerview.widget.RecyclerView>
-        </LinearLayout>
-    </ScrollView>
+
 
 </RelativeLayout>
