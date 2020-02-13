@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WLoginActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <EditText
+                android:id="@+id/userEmail"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:background="@drawable/rounded_textinput"
+                android:drawableLeft="@drawable/user"
+                android:drawablePadding="8dp"
+                android:hint="email"
+                android:textColor="#566573"
+                android:paddingStart="10dp"
+                android:textSize="15sp"
+                android:singleLine="true"/>
+
+
+            <EditText
+                android:id="@+id/userPassword"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:background="@drawable/rounded_textinput"
+                android:drawableLeft="@drawable/key"
+                android:drawablePadding="8dp"
+                android:hint="password"
+                android:textColor="#566573"
+                android:inputType="textPassword"
+                android:paddingStart="10dp"
+                android:textSize="15sp"
+                android:singleLine="true"/>
+
+            <CheckBox
+                android:id="@+id/rememberMe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:text="Remember me."
+                android:textColor="#B8B8B8" />
+
+            <Button
+                android:id="@+id/btnLogin"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="15dp"
+                android:background="@drawable/button_background"
+                android:text="LOGIN"
+                android:textColor="#fff"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

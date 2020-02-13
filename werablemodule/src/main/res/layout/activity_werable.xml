@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.wear.widget.BoxInsetLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:padding="@dimen/box_inset_layout_padding"
+    tools:context=".WerableActivity"
+    tools:deviceIds="wear">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/inner_frame_layout_padding"
+        app:boxedEdges="all">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="LOGIN"
+                android:textColor="#3B94FD"
+                android:textStyle="bold"
+                android:textSize="15dp">
+
+            </TextView>
+
+
+            <EditText
+                android:id="@+id/userEmail"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/rounded_textinput"
+                android:hint="email"
+                android:textColor="#566573"
+                android:paddingStart="10dp"
+                android:textSize="10sp"
+                android:textColorHint="#BB8B8B"
+                android:singleLine="true"/>
+
+
+            <EditText
+                android:id="@+id/userPassword"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/rounded_textinput"
+                android:hint="password"
+                android:textColor="#566573"
+                android:inputType="textPassword"
+                android:paddingStart="10dp"
+                android:textSize="10sp"
+                android:textColorHint="#BB8B8B"
+                android:singleLine="true"/>
+
+
+            <Button
+                android:id="@+id/btnLogin"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="5dp"
+                android:background="@drawable/button_background"
+                android:text="LOGIN"
+                android:textColor="#fff"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+    </ScrollView>
+
+
+    </FrameLayout>
+
+</androidx.wear.widget.BoxInsetLayout>
