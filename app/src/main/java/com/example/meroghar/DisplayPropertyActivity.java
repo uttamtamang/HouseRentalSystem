@@ -8,6 +8,9 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.meroghar.URL.Url;
+import com.squareup.picasso.Picasso;
+
 public class DisplayPropertyActivity extends AppCompatActivity {
 
     private TextView tvTitle, tvAddress, tvCategory, tvPurpose, tvPrice, tvDesc, tvFacility1, tvFacility2,
@@ -47,6 +50,15 @@ public class DisplayPropertyActivity extends AppCompatActivity {
         btnOwnerPhone = findViewById(R.id.viewOwnerPhone);
 
         propertyImage= findViewById(R.id.viewPropertyImage);
+
+        Bundle bundle = getIntent().getExtras();
+
+        if(bundle != null){
+            tvTitle.setText(bundle.getString("proTitle"));
+            String image = bundle.getString("proImage");
+            Picasso.get().load(Url.imagePath + image).into(propertyImage);
+
+        }
 
 
     }

@@ -41,4 +41,7 @@ public interface PropertyApi {
     @GET("/properties/myProperties")
     Call<List<Property>> getMyProperty(@Header("Authorization") String token);
 
+    @GET("/properties/{id}")
+    Call<Property> propertyDetail();
+
 }

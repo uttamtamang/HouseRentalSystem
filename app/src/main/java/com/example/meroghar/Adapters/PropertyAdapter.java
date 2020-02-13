@@ -1,6 +1,7 @@
 package com.example.meroghar.Adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.meroghar.DisplayPropertyActivity;
 import com.example.meroghar.Models.Property;
 import com.example.meroghar.R;
 import com.example.meroghar.URL.Url;
@@ -27,7 +29,7 @@ import java.util.List;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class PropertyAdapter extends RecyclerView.Adapter<PropertyAdapter.PropertyViewHolder> {
-
+    Property property;
     private List<Property> properties;
     private Context context;
 
@@ -50,7 +52,7 @@ public class PropertyAdapter extends RecyclerView.Adapter<PropertyAdapter.Proper
     public void onBindViewHolder(@NonNull PropertyViewHolder holder, int position) {
         StrictModeClass.StrictMode();
 
-        Property property = properties.get(position);
+        property = properties.get(position);
         String path = Url.imagePath + property.getImage();
         try{
             URL url = new URL(path);
@@ -90,7 +92,10 @@ public class PropertyAdapter extends RecyclerView.Adapter<PropertyAdapter.Proper
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(context, ""+ propertyTitle.getText().toString(), Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(context, DisplayPropertyActivity.class);
+                    intent.putExtra("proTitle", propertyTitle.getText().toString());
+                    intent.putExtra("proImage", property.getImage());
+                    context.startActivity(intent);
                 }
             });
         }

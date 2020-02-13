@@ -10,13 +10,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="10dp"
+            android:padding="15dp"
            >
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
                 android:id="@+id/viewPropertyImage"
-                android:background="@drawable/logo2">
+                android:src="@drawable/logo2">
             </ImageView>
 
             <TextView

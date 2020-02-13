@@ -19,13 +19,23 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="Filter Sections"
+                android:textColor="@color/colorYellow"
+                android:textStyle="bold"
+                android:textSize="25sp"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="Categories"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
                 android:id="@+id/categorySection"
                 android:textStyle="bold"
-                android:textSize="25sp" />
+                android:textSize="20sp"
+                android:textColor="@color/colorLight"/>
 
             <GridLayout
                 android:layout_width="match_parent"
@@ -135,7 +145,8 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="10dp"
                 android:textStyle="bold"
-                android:textSize="25sp">
+                android:textSize="20sp"
+                android:textColor="@color/colorPrimary">
 
             </TextView>
 
@@ -216,46 +227,24 @@
 
                 </androidx.cardview.widget.CardView>
             </GridLayout>
-
-            <RelativeLayout
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Available Map Pins"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:textSize="20sp"
+                android:textColor="@color/colorRed"/>
+            <Button
+                android:layout_marginVertical="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/advanceFilter"
-                >
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/propertyLocation"
-                    android:text="Location"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="10dp"
-                    android:textSize="25sp"
-                    android:textStyle="bold"/>
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:id="@+id/etLocation"
-                    android:layout_below="@+id/propertyLocation"
-                    android:drawableLeft="@drawable/ic_place_black_24dp"
-                    android:background="@drawable/rounded_textinput"
-                    android:drawablePadding="8dp"
-                    android:hint="Enter location"
-                    android:textSize="18dp"
-                    android:layout_margin="15dp"
-                    />
-            </RelativeLayout>
-
-            <Button
-                android:id="@+id/btnSearch"
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:layout_marginVertical="15dp"
+                android:id="@+id/viewMaps"
                 android:background="@drawable/button_background"
-                android:text="Search"
+                android:text="available/Pinned Locations"
                 android:textColor="#fff"
-                android:textSize="20sp" />
+                android:layout_marginHorizontal="10dp"/>
         </LinearLayout>
 
     </ScrollView>
