@@ -56,6 +56,7 @@
            android:layout_marginEnd="15dp"
            android:background="@drawable/rounded_textinput"
            android:hint="Price of the property."
+           android:inputType="number"
            android:padding="10dp"
            android:textSize="15sp"
            android:layout_margin="5dp"/>
@@ -322,6 +323,7 @@
           android:layout_marginEnd="15dp"
           android:background="@drawable/rounded_textinput"
           android:hint="No. of Bed Rooms"
+          android:inputType="number"
           android:padding="10dp"
           android:textSize="15sp"
           android:layout_margin="5dp">
@@ -345,6 +347,7 @@
            android:layout_marginEnd="15dp"
            android:background="@drawable/rounded_textinput"
            android:hint="No. of Kitchen Rooms"
+           android:inputType="number"
            android:padding="10dp"
            android:textSize="15sp"
            android:layout_margin="5dp"/>
@@ -367,6 +370,7 @@
            android:layout_marginEnd="15dp"
            android:background="@drawable/rounded_textinput"
            android:hint="No. of Living Rooms"
+           android:inputType="number"
            android:padding="10dp"
            android:textSize="15sp"
            android:layout_margin="5dp"/>
@@ -389,6 +393,7 @@
            android:layout_marginEnd="15dp"
            android:background="@drawable/rounded_textinput"
            android:hint="No. of Bath Rooms"
+           android:inputType="number"
            android:padding="10dp"
            android:textSize="15sp"
            android:layout_margin="5dp"/>

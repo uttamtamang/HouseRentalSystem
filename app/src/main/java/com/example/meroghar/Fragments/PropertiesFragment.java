@@ -28,6 +28,7 @@ import com.example.meroghar.URL.Url;
 import java.util.ArrayList;
 import java.util.List;
 
+import de.hdodenhof.circleimageview.CircleImageView;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -41,6 +42,7 @@ public class PropertiesFragment extends Fragment {
    // public static List<>
 
     EditText btnSearchByAddress;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

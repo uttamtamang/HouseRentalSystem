@@ -211,9 +211,10 @@ public class AddPropertyActivity extends AppCompatActivity {
                 Toast.makeText(AddPropertyActivity.this, "error"+ t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
             }
         });
+        clear();
 
-        Intent intent = new Intent(AddPropertyActivity.this, DashboardActivity.class);
-        startActivity(intent);
+//        Intent intent = new Intent(AddPropertyActivity.this, DashboardActivity.class);
+//        startActivity(intent);
     }
 
     private void saveImage(){
@@ -238,6 +239,22 @@ public class AddPropertyActivity extends AppCompatActivity {
             Toast.makeText(this,"Error"+e.getLocalizedMessage(),Toast.LENGTH_LONG).show();
             e.printStackTrace();
         }
+
+    }
+
+    public void clear(){
+        etPropertyTitle.setText("");
+        etFacility1.setText("");
+        etKitchenroom.setText("");
+        etLivingRoom.setText("");
+        etBathroom.setText("");
+        etBedroom.setText("");
+        etPropertyAddress.setText("");
+        etPropertyPrice.setText("");
+        etPropertyDescription.setText("");
+        etFacility2.setText("");
+        etFacility3.setText("");
+        etFacility4.setText("");
 
     }
 

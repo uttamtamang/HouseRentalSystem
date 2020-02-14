@@ -78,8 +78,10 @@ public class RegistrationActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(etPassword.getText().toString().equals(etConfirmPassword.getText().toString())){
-                    if(validate()){
+                    if(validate() && EmptyValidation()){
+
                         saveImage();
+                         //EmptyValidation();
                         signup();
 
                     }
@@ -95,15 +97,17 @@ public class RegistrationActivity extends AppCompatActivity {
 
     }
 
+    //to test
     private boolean validate(){
         boolean status= true;
 
-        if(etEmail.getText().toString().length() <6 ){
+        if(etEmail.getText().toString().length() < 6 ){
             etEmail.setError("Please enter validate email");
             status = false;
         }
         return status;
     }
+
     private void BrowseImage(){
 
         Intent intent = new Intent(Intent.ACTION_PICK);
@@ -172,8 +176,6 @@ public class RegistrationActivity extends AppCompatActivity {
         email= etEmail.getText().toString();
         password= etPassword.getText().toString();
         //cpassword= etConfirmPassword.getText().toString();
-
-
             User user = new User(fullname, address, phone, email, password, profilePicture);
             UserApi userApi = Url.getInstance().create(UserApi.class);
             Call<SignUpResponse> signup = userApi.signup(user);
@@ -197,6 +199,40 @@ public class RegistrationActivity extends AppCompatActivity {
                 }
             });
 
+    }
+
+    public boolean EmptyValidation(){
+        if(etFullName.getText().toString().trim().isEmpty()){
+            etFullName.setError("Enter your full name please..");
+            getCurrentFocus();
+            return false;
+        }
+         if(etPhone.getText().toString().trim().isEmpty()){
+            etPhone.setError("Enter your phone number please..");
+            getCurrentFocus();
+            return false;
+        }
+          if(etEmail.getText().toString().trim().isEmpty()){
+            etEmail.setError("Enter your email or username please..");
+            getCurrentFocus();
+            return false;
+        }
+           if(etAddress.getText().toString().trim().isEmpty()){
+            etAddress.setError("Enter your Address please..");
+            getCurrentFocus();
+            return false;
+        }
+            if(etPassword.getText().toString().trim().isEmpty()){
+            etPassword.setError("Enter your password please..");
+            getCurrentFocus();
+            return false;
+        }
+             if(etConfirmPassword.getText().toString().trim().isEmpty()){
+            etConfirmPassword.setError("confirm your password please..");
+            getCurrentFocus();
+            return false;
+        }
+        return true;
     }
 
 }

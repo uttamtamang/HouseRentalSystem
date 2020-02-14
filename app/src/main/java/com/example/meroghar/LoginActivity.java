@@ -108,8 +108,21 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
+
+
             @Override
             public void onClick(View v) {
+                //Validation
+                 if(userEmail.getText().toString().matches("")){
+                    userEmail.setError("Enter Your Username");
+                    getCurrentFocus();
+                    return;
+                    }
+                  if(userPassword.getText().toString().matches("")){
+                    userPassword.setError("Enter Your Password");
+                    getCurrentFocus();
+                    return;
+                    }
                 login();
             }
         });
@@ -139,7 +152,9 @@ public class LoginActivity extends AppCompatActivity {
                 else {
                     rememberMe.edit().clear().commit();
                 }
+                
                 if(!response.isSuccessful()){
+                    clearText();
                     Toast.makeText(LoginActivity.this, "Either Username or Password is incorrect", Toast.LENGTH_SHORT).show();
                     vibrator.vibrate(50);
                     return;
@@ -217,5 +232,10 @@ public class LoginActivity extends AppCompatActivity {
     protected void onStop() {
         super.onStop();
         unregisterReceiver(broadCastReceiver);
+    }
+
+    private void clearText(){
+        userEmail.setText("");
+        userPassword.setText("");
     }
 }

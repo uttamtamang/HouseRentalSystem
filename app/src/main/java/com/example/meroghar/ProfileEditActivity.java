@@ -14,7 +14,9 @@ import com.example.meroghar.Fragments.ProfileFragment;
 import com.example.meroghar.Interfaces.UserApi;
 import com.example.meroghar.Models.User;
 import com.example.meroghar.URL.Url;
+import com.squareup.picasso.Picasso;
 
+import de.hdodenhof.circleimageview.CircleImageView;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -24,6 +26,7 @@ public class ProfileEditActivity extends AppCompatActivity {
     Button btnProfileUpdate;
     EditText etFullName, etPhone, etAddress, etEmail;
     private static final String TAG = "UpdateProfile";
+    CircleImageView image;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,11 +43,16 @@ public class ProfileEditActivity extends AppCompatActivity {
 
         btnProfileUpdate = findViewById(R.id.btnUpdateProfile);
 
+        image=findViewById(R.id.myuserProfilePic);
+
         //SET USER DATA
         etFullName.setText(ProfileFragment.globalUser.getFullName());
         etAddress.setText(ProfileFragment.globalUser.getAddress());
         etPhone.setText(ProfileFragment.globalUser.getPhone());
         etEmail.setText(ProfileFragment.globalUser.getEmail());
+
+//         String imagePath= Url.imagePath+(ProfileFragment.globalUser.getProfilePicture());
+//         Picasso.get().load(imagePath).into(image);
 
         etEmail.setOnClickListener(new View.OnClickListener() {
             @Override
