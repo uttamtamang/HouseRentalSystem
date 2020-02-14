@@ -11,10 +11,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.meroghar.DisplayPropertyActivity;
 import com.example.meroghar.Models.Property;
+import com.example.meroghar.Models.User;
 import com.example.meroghar.R;
 import com.example.meroghar.URL.Url;
 import com.example.meroghar.strictmode.StrictModeClass;
@@ -29,7 +31,7 @@ import java.util.List;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class PropertyAdapter extends RecyclerView.Adapter<PropertyAdapter.PropertyViewHolder> {
-    Property property;
+//    Property property;
     private List<Property> properties;
     private Context context;
 
@@ -43,7 +45,7 @@ public class PropertyAdapter extends RecyclerView.Adapter<PropertyAdapter.Proper
     public PropertyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View view = LayoutInflater.from(parent.getContext())
-                        .inflate(R.layout.property_card, parent, false);
+                .inflate(R.layout.property_card, parent, false);
 
         return new PropertyViewHolder(view, context);
     }
@@ -52,9 +54,10 @@ public class PropertyAdapter extends RecyclerView.Adapter<PropertyAdapter.Proper
     public void onBindViewHolder(@NonNull PropertyViewHolder holder, int position) {
         StrictModeClass.StrictMode();
 
-        property = properties.get(position);
+        final Property property = properties.get(position);
+        final User user= property.getOwner();
         String path = Url.imagePath + property.getImage();
-        try{
+        try {
             URL url = new URL(path);
             holder.imgProperty.setImageBitmap(BitmapFactory.decodeStream((InputStream) url.getContent()));
         } catch (IOException e) {
@@ -63,7 +66,36 @@ public class PropertyAdapter extends RecyclerView.Adapter<PropertyAdapter.Proper
         holder.propertyTitle.setText(property.getTitle());
         holder.propertyPrice.setText(property.getPrice());
         holder.propertyLocation.setText(property.getAddress());
-        holder.propertyTitle.setText(property.getTitle());
+        holder.constraintLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(context, DisplayPropertyActivity.class);
+                intent.putExtra("proTitle", property.getTitle());
+                intent.putExtra("proImage", property.getImage());
+                intent.putExtra("proAddress", property.getAddress());
+                intent.putExtra("proCategory", property.getCategory());
+                intent.putExtra("proPurpose", property.getPurpose());
+                intent.putExtra("proPrice", property.getPrice());
+                intent.putExtra("proDesc", property.getDescription());
+                intent.putExtra("proF1", property.getFacility1());
+                intent.putExtra("proF2", property.getFacility2());
+                intent.putExtra("proF3", property.getFacility3());
+                intent.putExtra("proF4", property.getFacility4());
+                intent.putExtra("proBed", property.getBedroom());
+                intent.putExtra("proKitchen", property.getKitchen());
+                intent.putExtra("proLiving", property.getLivingroom());
+                intent.putExtra("proBath", property.getBathroom());
+
+                intent.putExtra("ownerName", user.getFullName());
+                intent.putExtra("ownerEmail", user.getEmail());
+                intent.putExtra("ownerAddress", user.getAddress());
+                intent.putExtra("ownerPhone", user.getPhone());
+
+                context.startActivity(intent);
+            }
+        });
+
     }
 
     @Override
@@ -71,7 +103,7 @@ public class PropertyAdapter extends RecyclerView.Adapter<PropertyAdapter.Proper
         return properties.size();
     }
 
-    public void FilterAddress(ArrayList<Property> filteredList){
+    public void FilterAddress(ArrayList<Property> filteredList) {
         properties = filteredList;
         notifyDataSetChanged();
     }
@@ -81,6 +113,7 @@ public class PropertyAdapter extends RecyclerView.Adapter<PropertyAdapter.Proper
         TextView propertyTitle, propertyPrice, propertyLocation;
         ImageView imgProperty;
         ImageView idLove;
+        ConstraintLayout constraintLayout;
 
         public PropertyViewHolder(@NonNull View itemView, final Context context) {
             super(itemView);
@@ -89,28 +122,7 @@ public class PropertyAdapter extends RecyclerView.Adapter<PropertyAdapter.Proper
             propertyLocation = itemView.findViewById(R.id.propertyLocation);
             imgProperty = itemView.findViewById(R.id.imgProperty);
             idLove = itemView.findViewById(R.id.idLove);
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(context, DisplayPropertyActivity.class);
-                    intent.putExtra("proTitle", propertyTitle.getText().toString());
-                    intent.putExtra("proImage", property.getImage());
-                    intent.putExtra("proAddress", property.getAddress());
-                    intent.putExtra("proCategory", property.getCategory());
-                    intent.putExtra("proPurpose", property.getPurpose());
-                    intent.putExtra("proPrice", property.getPrice());
-                    intent.putExtra("proDesc", property.getDescription());
-                    intent.putExtra("proF1", property.getFacility1());
-                    intent.putExtra("proF2", property.getFacility2());
-                    intent.putExtra("proF3", property.getFacility3());
-                    intent.putExtra("proF4", property.getFacility4());
-                    intent.putExtra("proBed", property.getBedroom());
-                    intent.putExtra("proKitchen", property.getKitchen());
-                    intent.putExtra("proLiving", property.getLivingroom());
-                    intent.putExtra("proBath", property.getBathroom());
-                    context.startActivity(intent);
-                }
-            });
+            constraintLayout = itemView.findViewById(R.id.constProperty);
         }
     }
 }

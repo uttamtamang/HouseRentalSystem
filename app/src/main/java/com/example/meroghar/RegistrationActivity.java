@@ -55,6 +55,7 @@ public class RegistrationActivity extends AppCompatActivity {
 //                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
 //                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
 //        );
+
         imgProfile = findViewById(R.id.imgProfile);
         etFullName= findViewById(R.id.userName);
         etPhone= findViewById(R.id.userPhone);
@@ -195,9 +196,6 @@ public class RegistrationActivity extends AppCompatActivity {
 
                 }
             });
-
-
-
 
     }
 

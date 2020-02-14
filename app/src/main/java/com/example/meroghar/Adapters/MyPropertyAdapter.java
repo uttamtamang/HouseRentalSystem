@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.meroghar.Models.Property;
+import com.example.meroghar.Models.User;
 import com.example.meroghar.R;
 import com.example.meroghar.URL.Url;
 import com.example.meroghar.strictmode.StrictModeClass;
@@ -48,6 +49,7 @@ public class MyPropertyAdapter extends RecyclerView.Adapter<MyPropertyAdapter.My
         StrictModeClass.StrictMode();
 
         Property property = myProperties.get(position);
+        final User user= property.getOwner();
         String path = Url.imagePath + property.getImage();
         try{
             URL url = new URL(path);

@@ -9,7 +9,7 @@ public class Property {
     private String _id;
     private String image;
     private String title;
-    private String owner;
+    private User owner;
     private String address;
     private String category;
     private String purpose;
@@ -31,7 +31,7 @@ public class Property {
     private String livingroom;
     private String bathroom;
 
-    public Property(String image, String title, String owner, String address, String category,
+    public Property(String image, String title, User owner, String address, String category,
                     String purpose, String description, String price, String facility1, String facility2,
                     String facility3, String facility4, String kitchen, String bedroom, String livingroom,
                     String bathroom) {
@@ -53,7 +53,7 @@ public class Property {
         this.bathroom = bathroom;
     }
 
-    public Property(String _id, String image, String title, String owner, String address, String category,
+    public Property(String _id, String image, String title, User owner, String address, String category,
                     String purpose, String description, String price, String facility1, String facility2,
                     String facility3, String facility4, String kitchen, String bedroom, String livingroom,
                     String bathroom) {
@@ -77,7 +77,7 @@ public class Property {
     }
 
 
-    public Property(String image, String title, String owner, String address, String category,
+    public Property(String image, String title, User owner, String address, String category,
                     String purpose, String description, String price) {
         this.image = image;
         this.title = title;
@@ -146,11 +146,11 @@ public class Property {
         this.title = title;
     }
 
-    public String getOwner() {
+    public User getOwner() {
         return owner;
     }
 
-    public void setOwner(String owner) {
+    public void setOwner(String String) {
         this.owner = owner;
     }
 

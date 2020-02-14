@@ -182,7 +182,7 @@ public class AddPropertyActivity extends AppCompatActivity {
 //                                            etPropertyDescription.getText().toString(),
 //                                            etPropertyPrice.getText().toString(), facilityList, roomList);
 
-        Property property = new Property(image ,etPropertyTitle.getText().toString(), ProfileFragment.globalUser.get_id(),
+        Property property = new Property(image ,etPropertyTitle.getText().toString(), ProfileFragment.globalUser,
                 etPropertyAddress.getText().toString(),
                 categorySpinner.getSelectedItem().toString(),
                 purposeSpinner.getSelectedItem().toString(),

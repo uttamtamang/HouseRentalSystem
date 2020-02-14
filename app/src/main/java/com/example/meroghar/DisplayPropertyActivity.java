@@ -2,7 +2,10 @@ package com.example.meroghar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -49,6 +52,13 @@ public class DisplayPropertyActivity extends AppCompatActivity {
 
         btnOwnerPhone = findViewById(R.id.viewOwnerPhone);
 
+        btnOwnerPhone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Dial();
+            }
+        });
+
         propertyImage= findViewById(R.id.viewPropertyImage);
 
         Bundle bundle = getIntent().getExtras();
@@ -73,8 +83,19 @@ public class DisplayPropertyActivity extends AppCompatActivity {
             tvLivingroom.setText(bundle.getString("proLiving"));
             tvBatroom.setText(bundle.getString("proBath"));
 
+            tvOwnerName.setText(bundle.getString("ownerName"));
+            tvOwnerEmail.setText(bundle.getString("ownerEmail"));
+            tvOwnerAddress.setText(bundle.getString("ownerAddress"));
+
+            btnOwnerPhone.setText(bundle.getString("ownerPhone"));
+
+
         }
 
-
+    }
+    private void Dial() {
+        Uri u = Uri.parse("tel:" + btnOwnerPhone.getText().toString());
+        Intent intent = new Intent(Intent.ACTION_DIAL, u);
+        startActivity(intent);
     }
 }
