@@ -95,6 +95,19 @@ public class PropertyAdapter extends RecyclerView.Adapter<PropertyAdapter.Proper
                     Intent intent = new Intent(context, DisplayPropertyActivity.class);
                     intent.putExtra("proTitle", propertyTitle.getText().toString());
                     intent.putExtra("proImage", property.getImage());
+                    intent.putExtra("proAddress", property.getAddress());
+                    intent.putExtra("proCategory", property.getCategory());
+                    intent.putExtra("proPurpose", property.getPurpose());
+                    intent.putExtra("proPrice", property.getPrice());
+                    intent.putExtra("proDesc", property.getDescription());
+                    intent.putExtra("proF1", property.getFacility1());
+                    intent.putExtra("proF2", property.getFacility2());
+                    intent.putExtra("proF3", property.getFacility3());
+                    intent.putExtra("proF4", property.getFacility4());
+                    intent.putExtra("proBed", property.getBedroom());
+                    intent.putExtra("proKitchen", property.getKitchen());
+                    intent.putExtra("proLiving", property.getLivingroom());
+                    intent.putExtra("proBath", property.getBathroom());
                     context.startActivity(intent);
                 }
             });

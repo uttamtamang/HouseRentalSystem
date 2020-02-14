@@ -57,6 +57,21 @@ public class DisplayPropertyActivity extends AppCompatActivity {
             tvTitle.setText(bundle.getString("proTitle"));
             String image = bundle.getString("proImage");
             Picasso.get().load(Url.imagePath + image).into(propertyImage);
+            tvAddress.setText(bundle.getString("proAddress"));
+            tvCategory.setText(bundle.getString("proCategory"));
+            tvPurpose.setText(bundle.getString("proPurpose"));
+            tvPrice.setText(bundle.getString("proPrice"));
+            tvDesc.setText(bundle.getString("proDesc"));
+
+            tvFacility1.setText(bundle.getString("proF1"));
+            tvFacility2.setText(bundle.getString("proF2"));
+            tvFacility3.setText(bundle.getString("proF3"));
+            tvFacility4.setText(bundle.getString("proF4"));
+
+            tvBedroom.setText(bundle.getString("proBed"));
+            tvKitchen.setText(bundle.getString("proKitchen"));
+            tvLivingroom.setText(bundle.getString("proLiving"));
+            tvBatroom.setText(bundle.getString("proBath"));
 
         }
 
