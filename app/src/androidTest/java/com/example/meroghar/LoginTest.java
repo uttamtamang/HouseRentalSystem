@@ -11,27 +11,22 @@ import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 
 
-public class UserUpdateTest {
-
+public class LoginTest {
     @Rule
-    public ActivityTestRule<ProfileEditActivity> profileEdit = new ActivityTestRule<>(ProfileEditActivity.class);
+    public ActivityTestRule<LoginActivity> login= new ActivityTestRule<>(LoginActivity.class);
 
     @Test
-    public void EditProfileTest(){
-        onView(withId(R.id.userNameUpdate))
-             .perform(typeText("uttam tamang"))
+    public void TestLogin(){
+         onView(withId(R.id.userEmail))
+             .perform(typeText("uttam"))
              .perform(closeSoftKeyboard());
 
-     onView(withId(R.id.userAddressUpdate))
-             .perform(typeText("kathmandu"))
-             .perform(closeSoftKeyboard());
-      onView(withId(R.id.userPhoneUpdate))
-             .perform(typeText("1234567890"))
+     onView(withId(R.id.userPassword))
+             .perform(typeText("uttam"))
              .perform(closeSoftKeyboard());
 
-     onView(withId(R.id.btnUpdateProfile))
+     onView(withId(R.id.btnLogin))
              .perform(click());
     }
-
-
 }
+

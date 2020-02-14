@@ -11,27 +11,25 @@ import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 
 
-public class UserUpdateTest {
+public class AddPropertyTest {
 
     @Rule
-    public ActivityTestRule<ProfileEditActivity> profileEdit = new ActivityTestRule<>(ProfileEditActivity.class);
+    public ActivityTestRule<AddPropertyActivity> addProperty = new ActivityTestRule<>(AddPropertyActivity.class);
 
     @Test
-    public void EditProfileTest(){
-        onView(withId(R.id.userNameUpdate))
-             .perform(typeText("uttam tamang"))
+    public void addProperty(){
+         onView(withId(R.id.propertyTitle))
+             .perform(typeText("Beautiful House for sell"))
              .perform(closeSoftKeyboard());
 
-     onView(withId(R.id.userAddressUpdate))
-             .perform(typeText("kathmandu"))
-             .perform(closeSoftKeyboard());
-      onView(withId(R.id.userPhoneUpdate))
-             .perform(typeText("1234567890"))
+          onView(withId(R.id.propertyPrice))
+             .perform(typeText("1500000"))
              .perform(closeSoftKeyboard());
 
-     onView(withId(R.id.btnUpdateProfile))
-             .perform(click());
+        onView(withId(R.id.propertyAddress))
+             .perform(typeText("Nayapaati"))
+             .perform(closeSoftKeyboard());
+
     }
-
 
 }

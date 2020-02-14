@@ -67,8 +67,6 @@ public class ProfileEditActivity extends AppCompatActivity {
                 updateUserProfile();
             }
         });
-
-
     }
 
     private void updateUserProfile(){
