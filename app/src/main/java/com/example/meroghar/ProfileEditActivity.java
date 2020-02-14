@@ -43,7 +43,7 @@ public class ProfileEditActivity extends AppCompatActivity {
 
         btnProfileUpdate = findViewById(R.id.btnUpdateProfile);
 
-        image=findViewById(R.id.myuserProfilePic);
+        image=findViewById(R.id.imgProfileUpdate);
 
         //SET USER DATA
         etFullName.setText(ProfileFragment.globalUser.getFullName());
@@ -51,8 +51,10 @@ public class ProfileEditActivity extends AppCompatActivity {
         etPhone.setText(ProfileFragment.globalUser.getPhone());
         etEmail.setText(ProfileFragment.globalUser.getEmail());
 
-//         String imagePath= Url.imagePath+(ProfileFragment.globalUser.getProfilePicture());
-//         Picasso.get().load(imagePath).into(image);
+
+
+         String imagePath= Url.imagePath+ProfileFragment.globalUser.getProfilePicture();
+         Picasso.get().load(imagePath).into(image);
 
         etEmail.setOnClickListener(new View.OnClickListener() {
             @Override

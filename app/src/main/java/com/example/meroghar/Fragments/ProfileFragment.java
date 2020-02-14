@@ -117,6 +117,7 @@ public class ProfileFragment extends Fragment {
 
                 String imagePath= Url.imagePath +response.body().getProfilePicture();
                 Picasso.get().load(imagePath).into(tvuserProfilePic);
+
                 String full_name=response.body().getFullName();
                 String email =response.body().getEmail();
                 String address =response.body().getAddress();
