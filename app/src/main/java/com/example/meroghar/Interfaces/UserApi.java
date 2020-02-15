@@ -7,6 +7,8 @@ import com.example.meroghar.ServerResponse.SignUpResponse;
 import okhttp3.MultipartBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.Multipart;
@@ -21,6 +23,10 @@ public interface UserApi {
 
     @POST("users/login")
     Call<SignUpResponse> login(@Body User user);
+
+    @FormUrlEncoded
+    @POST("users/login")
+    Call<SignUpResponse> checkUser(@Field("email") String email, @Field("password") String password);
 
     @Multipart
     @POST("/upload")

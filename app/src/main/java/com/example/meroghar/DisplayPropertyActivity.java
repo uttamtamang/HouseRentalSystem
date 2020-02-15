@@ -98,4 +98,9 @@ public class DisplayPropertyActivity extends AppCompatActivity {
         Intent intent = new Intent(Intent.ACTION_DIAL, u);
         startActivity(intent);
     }
+
+    public int TotalRentCost(int rent, int vat){
+        int total =(rent +(rent *vat/100));
+        return total;
+    }
 }
