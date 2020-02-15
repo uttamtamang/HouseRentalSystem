@@ -5,6 +5,24 @@ import java.util.List;
 public class Property {
 
 
+    public Property(String title, String address, String category, String purpose, String description,
+                    String price, String facility1, String facility2, String facility3, String facility4,
+                    String kitchen, String bedroom, String livingroom, String bathroom) {
+        this.title = title;
+        this.address = address;
+        this.category = category;
+        this.purpose = purpose;
+        this.description = description;
+        this.price = price;
+        this.facility1 = facility1;
+        this.facility2 = facility2;
+        this.facility3 = facility3;
+        this.facility4 = facility4;
+        this.kitchen = kitchen;
+        this.bedroom = bedroom;
+        this.livingroom = livingroom;
+        this.bathroom = bathroom;
+    }
 
     private String _id;
     private String image;

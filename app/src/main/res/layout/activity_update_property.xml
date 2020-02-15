@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="10dp">
-        a
+
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="300dp"
@@ -24,6 +24,12 @@
             android:scaleType="fitXY">
 
         </ImageView>
+
+        <EditText
+            android:id="@+id/update_propertyId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
 
         <EditText
             android:id="@+id/update_propertyTitle"
@@ -74,6 +80,7 @@
             android:layout_margin="5dp"/>
 
         <TextView
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Category"
@@ -406,7 +413,18 @@
             android:layout_marginHorizontal="5dp"
             android:layout_marginVertical="5dp"
             android:background="@drawable/button_add_property"
-            android:text="add my property"
+            android:text="Update property"
+            android:textColor="#fff"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/btnDeleteMyProperty"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginVertical="5dp"
+            android:background="@drawable/button_log_out"
+            android:text="Delete property"
             android:textColor="#fff"
             android:textSize="15sp" />
 
