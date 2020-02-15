@@ -48,9 +48,9 @@ public interface PropertyApi {
 
 
      @PUT("/properties/{id}")
-    Call<Property> updateProperty(@Header("Authorization") String token, @Path("id") String id,  @Body Property property);
+     Call<Property> updateProperty(@Header("Authorization") String token, @Path("id") String id,  @Body Property property);
 
      @DELETE("/properties/{id}")
-    Call<Property> deleteProperty(@Header("Authorization") String token,@Path("id") String id);
+      Call<Property> deleteProperty(@Header("Authorization") String token,@Path("id") String id);
 
 }

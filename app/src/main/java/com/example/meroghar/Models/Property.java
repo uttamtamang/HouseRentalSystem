@@ -5,6 +5,34 @@ import java.util.List;
 public class Property {
 
 
+
+
+    private String _id;
+    private String image;
+    private String title;
+    private User owner;
+    private String address;
+    private String category;
+    private String purpose;
+    private String description;
+    private String price;
+
+    //    private List<Facility> facilityList;
+//    private List<Room> roomList;
+
+
+    //Updated DB Collections
+    private String facility1;
+    private String facility2;
+    private String facility3;
+    private String facility4;
+
+    private String kitchen;
+    private String bedroom;
+    private String livingroom;
+    private String bathroom;
+
+
     public Property(String title, String address, String category, String purpose, String description,
                     String price, String facility1, String facility2, String facility3, String facility4,
                     String kitchen, String bedroom, String livingroom, String bathroom) {
@@ -24,30 +52,6 @@ public class Property {
         this.bathroom = bathroom;
     }
 
-    private String _id;
-    private String image;
-    private String title;
-    private User owner;
-    private String address;
-    private String category;
-    private String purpose;
-    private String description;
-    private String price;
-
-//    private List<Facility> facilityList;
-//    private List<Room> roomList;
-
-
-    //Updated DB Collections
-    private String facility1;
-    private String facility2;
-    private String facility3;
-    private String facility4;
-
-    private String kitchen;
-    private String bedroom;
-    private String livingroom;
-    private String bathroom;
 
     public Property(String image, String title, User owner, String address, String category,
                     String purpose, String description, String price, String facility1, String facility2,

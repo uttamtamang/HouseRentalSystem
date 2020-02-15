@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.meroghar.URL.Url;
 import com.squareup.picasso.Picasso;
@@ -19,7 +20,7 @@ public class DisplayPropertyActivity extends AppCompatActivity {
     private TextView tvTitle, tvAddress, tvCategory, tvPurpose, tvPrice, tvDesc, tvFacility1, tvFacility2,
             tvFacility3, tvFacility4, tvBedroom, tvKitchen, tvLivingroom, tvBatroom, tvOwnerName, tvOwnerAddress,
             tvOwnerEmail;
-    private Button btnOwnerPhone;
+    private Button btnOwnerPhone, btnfav;
     private ImageView propertyImage;
 
     @Override
@@ -51,6 +52,15 @@ public class DisplayPropertyActivity extends AppCompatActivity {
         tvOwnerEmail = findViewById(R.id.viewOwnerEmail);
 
         btnOwnerPhone = findViewById(R.id.viewOwnerPhone);
+        btnfav = findViewById(R.id.addtofavorite);
+
+        btnfav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(DisplayPropertyActivity.this, "Property added to wishlist.", Toast.LENGTH_SHORT).show();
+
+            }
+        });
 
         btnOwnerPhone.setOnClickListener(new View.OnClickListener() {
             @Override

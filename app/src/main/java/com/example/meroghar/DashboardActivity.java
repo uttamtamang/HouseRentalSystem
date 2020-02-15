@@ -20,12 +20,17 @@ import com.example.meroghar.Fragments.FavoritesFragment;
 import com.example.meroghar.Fragments.DashboardFragment;
 import com.example.meroghar.Fragments.ProfileFragment;
 import com.example.meroghar.Fragments.PropertiesFragment;
+import com.example.meroghar.Models.Wishlist;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DashboardActivity extends AppCompatActivity {
 
+    public static List<Wishlist> wishlistList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,10 +39,14 @@ public class DashboardActivity extends AppCompatActivity {
 
 
         getSupportActionBar().hide();
+        wishlistList = new ArrayList<>();
+        wishlistList.add(new Wishlist("Beautiful house for sell", "100000", "Nayapaati", R.drawable.wishlist));
+        wishlistList.add(new Wishlist("Beautiful flat for Rent", "125000", "Dillibazar", R.drawable.wishlist2));
 
 //        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
 //        NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
 //        NavigationUI.setupWithNavController(navigationView, navController);
+
 
 
         BottomNavigationView bottomNav = findViewById(R.id.bottom_nav);
