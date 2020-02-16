@@ -52,19 +52,6 @@
         app:layout_constraintTop_toBottomOf="@id/propertyPrice"
 
         />
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/propertyLocation"
-        app:layout_constraintStart_toEndOf="parent"
-        android:id="@+id/btnUpdateThis"
-        android:text="Update"
-        android:textColor="#fff"
-        android:background="@color/colorButton"
-        android:textSize="18sp">
-
-    </Button>
 
 
 

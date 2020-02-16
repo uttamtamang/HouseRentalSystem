@@ -7,6 +7,11 @@ public class Wishlist {
     private String location;
     private int image;
 
+    public Wishlist(String title, String price, String location) {
+        this.title = title;
+        this.price = price;
+        this.location = location;
+    }
 
     public Wishlist(String title, String price, String location, int image) {
         this.title = title;

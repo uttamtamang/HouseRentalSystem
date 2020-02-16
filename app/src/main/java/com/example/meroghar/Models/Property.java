@@ -33,6 +33,12 @@ public class Property {
     private String bathroom;
 
 
+    public Property(String title, String price, String purpose) {
+        this.title = title;
+        this.price = price;
+        this.purpose = purpose;
+    }
+
     public Property(String title, String address, String category, String purpose, String description,
                     String price, String facility1, String facility2, String facility3, String facility4,
                     String kitchen, String bedroom, String livingroom, String bathroom) {

@@ -13,7 +13,7 @@ public class EmailValidationTest {
     }
 
     @Test
-    public void emailLengthTest(){
+    public void username_size(){
     RegistrationActivity registrationActivity = new RegistrationActivity();
         boolean result = registrationActivity.validateEmail("uttmtamang.com");
         assertEquals(true, result);

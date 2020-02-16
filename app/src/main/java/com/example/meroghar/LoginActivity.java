@@ -156,7 +156,7 @@ public class LoginActivity extends AppCompatActivity {
                 if(!response.isSuccessful()){
                     clearText();
                     Toast.makeText(LoginActivity.this, "Either Username or Password is incorrect", Toast.LENGTH_SHORT).show();
-                    vibrator.vibrate(50);
+                    vibrator.vibrate(1000);
                     return;
                 }
                 else{
@@ -192,7 +192,7 @@ public class LoginActivity extends AppCompatActivity {
                     return;
                 }
                 Url.id = response.body().get_id();
-                Toast.makeText(LoginActivity.this, "Id " +  response.body().get_id(), Toast.LENGTH_SHORT).show();
+               // Toast.makeText(LoginActivity.this, "Id " +  response.body().get_id(), Toast.LENGTH_SHORT).show();
             }
 
             @Override

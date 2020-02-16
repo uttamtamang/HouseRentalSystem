@@ -123,8 +123,8 @@ public class ProfileFragment extends Fragment {
                 String address =response.body().getAddress();
                 String phone_number =response.body().getPhone();
 
-                Toast.makeText(getContext(),"image:"+imagePath,Toast.LENGTH_LONG).show();
-                Toast.makeText(getContext(),"fullname:"+full_name,Toast.LENGTH_LONG).show();
+//                Toast.makeText(getContext(),"image:"+imagePath,Toast.LENGTH_LONG).show();
+//                Toast.makeText(getContext(),"fullname:"+full_name,Toast.LENGTH_LONG).show();
                 //name.setText(full_name);
                 tvemail.setText(email);
                 tvaddress.setText(address);

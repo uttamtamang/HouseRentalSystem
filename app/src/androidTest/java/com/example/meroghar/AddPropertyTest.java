@@ -26,10 +26,6 @@ public class AddPropertyTest {
              .perform(typeText("1500000"))
              .perform(closeSoftKeyboard());
 
-        onView(withId(R.id.propertyAddress))
-             .perform(typeText("Nayapaati"))
-             .perform(closeSoftKeyboard());
-
     }
 
 }

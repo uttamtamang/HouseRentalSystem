@@ -40,9 +40,9 @@ public class DashboardActivity extends AppCompatActivity {
 
         getSupportActionBar().hide();
         wishlistList = new ArrayList<>();
-        wishlistList.add(new Wishlist("Beautiful house for sell", "100000", "Nayapaati", R.drawable.wishlist));
-        wishlistList.add(new Wishlist("Beautiful flat for Rent", "125000", "Dillibazar", R.drawable.wishlist2));
-
+//        wishlistList.add(new Wishlist("home for sell", "12000", "queens", R.drawable.wishlist));
+      // wishlistList.add(new Wishlist("get your dream house", "15000", "dillibazar", R.drawable.wishlist2));
+//
 //        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
 //        NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
 //        NavigationUI.setupWithNavController(navigationView, navController);

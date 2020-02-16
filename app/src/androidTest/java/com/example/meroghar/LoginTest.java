@@ -21,10 +21,6 @@ public class LoginTest {
              .perform(typeText("uttam"))
              .perform(closeSoftKeyboard());
 
-     onView(withId(R.id.userPassword))
-             .perform(typeText("uttam"))
-             .perform(closeSoftKeyboard());
-
      onView(withId(R.id.btnLogin))
              .perform(click());
     }

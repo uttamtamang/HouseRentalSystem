@@ -31,6 +31,8 @@ public class MyPropertyActivity extends AppCompatActivity {
         propertyRecyclerView= findViewById(R.id.myPropertyList);
         getSupportActionBar().setTitle("My properties");
 
+        adapter = new MyPropertyAdapter(DisplayPropertyActivity.property, getApplicationContext());
+        propertyRecyclerView.setAdapter(adapter);
         loadProperties();
     }
 

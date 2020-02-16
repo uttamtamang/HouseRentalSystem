@@ -189,7 +189,7 @@ public class RegistrationActivity extends AppCompatActivity {
 
             Response<ImageResponse> imageResponseResponse = imageResponseCall.execute();
             profilePicture = imageResponseResponse.body().getFilename();
-            Toast.makeText(this,"Profile Updated"+profilePicture,Toast.LENGTH_LONG).show();
+           // Toast.makeText(this,"Profile Updated"+profilePicture,Toast.LENGTH_LONG).show();
 
         }catch (IOException e){
             Toast.makeText(this,"Error"+e.getLocalizedMessage(),Toast.LENGTH_LONG).show();

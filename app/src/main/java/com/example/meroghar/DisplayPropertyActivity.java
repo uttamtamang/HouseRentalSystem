@@ -12,8 +12,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.meroghar.Models.Property;
 import com.example.meroghar.URL.Url;
 import com.squareup.picasso.Picasso;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DisplayPropertyActivity extends AppCompatActivity {
 
@@ -22,6 +26,7 @@ public class DisplayPropertyActivity extends AppCompatActivity {
             tvOwnerEmail;
     private Button btnOwnerPhone, btnfav;
     private ImageView propertyImage;
+    public static List<Property> property = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +62,8 @@ public class DisplayPropertyActivity extends AppCompatActivity {
         btnfav.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(DisplayPropertyActivity.this, "Property added to wishlist.", Toast.LENGTH_SHORT).show();
+//               property.add(new Property(tvTitle.getText().toString(), tvPrice.getText().toString(), tvPurpose.getText().toString()));
+                Toast.makeText(DisplayPropertyActivity.this, "Wishlist Added Successfully.", Toast.LENGTH_SHORT).show();
 
             }
         });

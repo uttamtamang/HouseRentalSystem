@@ -19,11 +19,11 @@ public class SignupTest {
  @Test
     public void TestSignup() {
      onView(withId(R.id.userName))
-             .perform(typeText("uttam tamang"))
+             .perform(typeText("uttam"))
              .perform(closeSoftKeyboard());
 
      onView(withId(R.id.userEmail))
-             .perform(typeText("uttamtamang@gmail.com"))
+             .perform(typeText("uttam"))
              .perform(closeSoftKeyboard());
 
      onView(withId(R.id.userRPassword))
